@@ -1,0 +1,255 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+.background-image {
+    background: url('C:/Users/stive/OneDrive/Escritorio/ROHE Studio/Logos/I.E.T.D.Z.1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.1; /* Ajusta la opacidad para que sea traslúcida */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Coloca la imagen detrás de todos los demás elementos */
+}
+
+.contenido, .sidebar, .openbtn {
+    position: relative;
+    z-index: 1; /* Asegura que estos elementos estén por encima de la imagen de fondo */
+}
+
+h1 {
+    text-align: center;
+    background-color: darkgreen;
+    color: white;
+    padding: 0.2%;
+    transition: opacity 0.5s ease-in-out, height 0.5s ease-in-out;
+    width: 100%; /* Ocupa todo el ancho */
+    height: 30vh; /* Ocupa el 30% del alto de la ventana inicialmente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h3 {
+    text-decoration: none;
+    background-color: darkgreen;
+    border-radius: 50px;
+    display: inline-block;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+
+.PR-IMG img {
+    width: 100%; /* Ocupa todo el ancho del h1 */
+    height: 100%; /* Ocupa todo el alto del h1 */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    display: block;
+    margin: 0 auto;
+}
+.Rohe_logo img {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    max-width: 150px; /* Ajusta el tamaño máximo de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: contain; /* Asegura que la imagen cubra el área sin deformarse */
+    display: block;
+    margin: 0 auto;
+}
+nav ul {
+    background-color: black;
+    width: 100%;
+    list-style: none;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+
+nav li:hover {
+    background-color: darkgreen;
+}
+
+.img-prin {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+}
+
+.contenido {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.articulos {
+    width: 100%;
+    border-right: 3px solid black;
+    padding: 20px;
+}
+
+.secciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+h2 {
+    text-decoration: none;
+    background-color: darkgreen;
+    border-radius: 50px;
+    display: inline-block;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+
+.text1-in {
+    text-decoration: none;
+    text-align: left; /* Alinea el texto a la izquierda */
+    color: black;
+    padding: 20px;
+    font-size: 1.2em;
+}
+.h2-1 {
+    text-decoration: none;
+    background-color: darkgreen;
+    border-radius: 50px;
+    display: inline-block;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    font-size: 1.2em;
+}
+.text2 {
+    text-decoration: none;
+    text-align: left;
+    color: black;
+    padding: 20px;
+    font-size: 1em;
+}
+
+.menu-secundario {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.menu-secundario a {
+    display: block;
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+}
+.GUIAS-PR1 a{
+	font-size: 25px;
+	display: block;
+	color: darkgreen;
+	margin-bottom: 20px;
+    text-align: left;
+}
+.GUIAS-PR1 {	
+	width: 40% ;
+	margin-top: 10px;
+    text-align: left;
+}
+.GUIA1 {
+	list-style-type: disc;
+	font-size: 25px;
+	margin-bottom: 0px;
+}
+.P-DES{
+	font-size: 30px;
+	margin-bottom: 5px;
+}
+.TEMAS-G1{
+	font-size: 35px;
+	margin-bottom: 5px;
+	font-weight: 700;
+}
+
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+@media (min-width: 768px) {
+    .articulos {
+        width: 80%;
+    }
+    .menu-secundario {
+        width: 20%;
+    }
+}
+.contenido, .openbtn {
+    position: relative;
+    z-index: 1; /* Asegura que estos elementos estén por debajo de la barra de navegación */
+}
