@@ -14,7 +14,7 @@ body {
 }
 
 .background-image {
-    background: url('C:/Users/stive/OneDrive/Escritorio/ROHE Studio/Logos/I.E.T.D.Z.1.jpg') no-repeat center center fixed;
+    background: url('WIKILABS/assets/I.E.T.D.Z.1.jpg') no-repeat center center fixed;
     background-size: cover;
     opacity: 0.1; /* Ajusta la opacidad para que sea traslúcida */
     position: absolute;
