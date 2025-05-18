@@ -1,0 +1,283 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500&display=swap');
+
+body {
+    background-image: url("../DCIM/BACKGROUND/1.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.header {
+    width: 100%;
+    height: 60px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeDown 1s ease forwards;
+}
+
+.header-menu {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.logo {
+    max-width: 100px;
+    height: auto;
+    margin-right: 0;
+}
+
+.header-menu ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    margin: 0 10px 0 0;
+    padding: 0;
+}
+
+.header-menu ul li {
+    display: inline-block;
+}
+
+.nav-menu-link {
+    text-decoration: none;
+    color: #36e2f6;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: solid 2px transparent;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-menu-link:hover {
+    color: #ffffff;
+    border-color: #000000;
+    box-shadow: 0 4px 8px rgba(54, 226, 246, 0.3);
+    background: #000000;
+}
+
+.math-container {
+    margin-top: 100px;
+    padding: 40px 20px 40px 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(0,0,0,0.4);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
+        /* Animación de profundidad */
+    transition: box-shadow 0.5s cubic-bezier(.25,.8,.25,1), transform 0.5s cubic-bezier(.25,.8,.25,1);
+}
+.math-container.depth-animate:hover {
+    box-shadow: 0 16px 48px rgba(54, 226, 246, 0.25), 0 2px 8px rgba(0,0,0,0.15);
+    transform: translateY(-8px) scale(1.01);
+}
+
+.math-title {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 900;
+    color: #fff;
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px #000;
+    text-align: center;
+}
+
+.math-slogan {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 700;
+    color: #36e2f6;
+    font-size: 1.3rem;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.math-section {
+    background: #fafdff;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(54, 226, 246, 0.10);
+    padding: 28px 24px 18px 24px;
+    margin-bottom: 32px;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInSection 1s ease forwards;
+    /* Animación de profundidad */
+    transition: box-shadow 0.5s cubic-bezier(.25,.8,.25,1), transform 0.5s cubic-bezier(.25,.8,.25,1);
+}
+
+.math-section:hover {
+    box-shadow: 0 8px 32px rgba(54, 226, 246, 0.18), 0 2px 12px rgba(67, 233, 123, 0.10);
+    transform: translateY(-4px) scale(1.01);
+}
+
+.math-section h2 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 700;
+    color: #36e2f6;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.math-section p {
+    color: #222;
+    font-size: 1.08rem;
+    margin-bottom: 12px;
+}
+
+.math-examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 16px;
+}
+
+.math-example {
+    background: linear-gradient(90deg, #e0f7fa 60%, #fafdff 100%);
+    border-left: 5px solid #36e2f6;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 1.08rem;
+    color: #1a6fa6;
+    margin-bottom: 0;
+    min-width: 170px;
+}
+
+.math-label {
+    font-weight: bold;
+    color: #222;
+}
+
+.math-algebra-img,
+.math-calc-img,
+.math-geometry-drawings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.math-algebra-img img,
+.math-calc-img img {
+    width: 180px;
+    margin-bottom: 6px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(54, 226, 246, 0.10);
+    background: #fff;
+}
+
+.img-caption {
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: 2px;
+}
+
+canvas {
+    margin-top: 10px;
+    margin-bottom: 8px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(54, 226, 246, 0.10);
+    /* Tamaño grande para gráficas */
+    max-width: 400px;
+    max-height: 240px;
+    width: 360px !important;
+    height: 180px !important;
+    display: block;
+}
+
+.math-graph-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 18px 0 10px 0;
+    width: 100%;
+}
+
+.math-graph-wrapper canvas {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 480px;
+    max-height: 320px;
+    aspect-ratio: 3/2;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(54, 226, 246, 0.13);
+    transition: box-shadow 0.4s cubic-bezier(.25,.8,.25,1), transform 0.4s cubic-bezier(.25,.8,.25,1);
+    cursor: pointer;
+}
+
+.math-graph-wrapper canvas:hover {
+    box-shadow: 0 8px 32px rgba(54, 226, 246, 0.22), 0 2px 16px rgba(67, 233, 123, 0.13);
+    transform: scale(1.04) translateY(-4px);
+    z-index: 2;
+}
+
+/* Elimina el estilo anterior de canvas para evitar conflictos */
+canvas:not(.math-graph-wrapper canvas) {
+    margin-top: 10px;
+    margin-bottom: 8px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(54, 226, 246, 0.10);
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .math-container {
+        max-width: 98vw;
+        padding: 20px 2vw;
+    }
+    .math-section {
+        padding: 18px 6vw 12px 6vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .math-title {
+        font-size: 1.4rem;
+    }
+    .math-section h2 {
+        font-size: 1.1rem;
+    }
+    .math-section {
+        padding: 12px 2vw 8px 2vw;
+    }
+}
+
+@keyframes fadeDown {
+    0% { opacity: 0; transform: translateY(-40px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(40px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeInSection {
+    0% { opacity: 0; transform: translateY(40px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+
+.math-section.fade-in { opacity: 0; }
