@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Ciencias | WikiLabs</title>
+    <link rel="stylesheet" href="css/style7.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="header">
+        <nav class="header-menu">  
+            <img src="DCIM/LOGOS/WIKILABS-WHITE.png" class="logo">
+            <ul>
+                <li class="nav-menu-item"><a href="index.html" class="nav-menu-link">Inicio</a></li>
+                <li class="nav-menu-item"><a href="cursos.html" class="nav-menu-link">Cursos</a></li>
+                <li class="nav-menu-item"><a href="contact.html" class="nav-menu-link">Contáctanos</a></li>
+            </ul>
+        </nav>  
+    </div>
+    <div class="ciencias-container">
+        <h1 class="ciencias-title">Ciencias de Secundaria</h1>
+        <p class="ciencias-slogan">Descubre los secretos de la biología, física y química con experimentos y recursos visuales.</p>
+        
+        <!-- Biología -->
+        <section class="ciencias-section fade-in">
+            <h2>Biología: La célula y los seres vivos</h2>
+            <p>
+                La biología estudia los seres vivos y su entorno. La célula es la unidad básica de la vida.
+            </p>
+            <div class="ciencias-bio-img">
+                <svg width="180" height="100" viewBox="0 0 180 100">
+                    <ellipse cx="90" cy="50" rx="70" ry="40" fill="#e0ffe9" stroke="#43e97b" stroke-width="3"/>
+                    <circle cx="90" cy="50" r="18" fill="#fff" stroke="#36e2f6" stroke-width="2"/>
+                    <circle cx="90" cy="50" r="7" fill="#43e97b"/>
+                    <text x="90" y="95" font-size="14" text-anchor="middle" fill="#1a7f4e">Célula</text>
+                </svg>
+                <span class="img-caption">Estructura básica de una célula</span>
+            </div>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Partes de la célula:</span> Membrana, citoplasma, núcleo.
+            </div>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Funciones vitales:</span> Nutrición, relación y reproducción.
+            </div>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Tipos de seres vivos:</span> Animales, plantas, hongos, bacterias y protistas.
+            </div>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Niveles de organización:</span> Célula → Tejido → Órgano → Sistema → Organismo.
+            </div>
+        </section>
+
+        <!-- Biología: Ecosistemas -->
+        <section class="ciencias-section fade-in">
+            <h2>Biología: Ecosistemas y Medio Ambiente</h2>
+            <p>
+                Un ecosistema es el conjunto de seres vivos y el entorno donde viven. Incluye factores bióticos (seres vivos) y abióticos (agua, luz, temperatura).
+            </p>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Ejemplo de ecosistema:</span> Un bosque, un lago, un desierto.
+            </div>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Cadenas alimenticias:</span> Productores → Consumidores → Descomponedores.
+            </div>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Importancia:</span> El equilibrio ecológico mantiene la vida en el planeta.
+            </div>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Cuidado ambiental:</span> Reciclar, ahorrar agua y energía, proteger la biodiversidad.
+            </div>
+        </section>
+
+        <!-- Física -->
+        <section class="ciencias-section fade-in">
+            <h2>Física: Movimiento y Energía</h2>
+            <p>
+                La física estudia la materia, la energía y el movimiento.<br>
+                <b>Ejemplo:</b> Un auto que acelera, una pelota que cae.
+            </p>
+            <div class="ciencias-fisica-img">
+                <svg width="180" height="80" viewBox="0 0 180 80">
+                    <rect x="0" y="70" width="180" height="10" fill="#e0f7fa"/>
+                    <circle cx="40" cy="60" r="10" fill="#36e2f6" stroke="#1a6fa6" stroke-width="2"/>
+                    <line x1="40" y1="60" x2="100" y2="40" stroke="#43e97b" stroke-width="3" marker-end="url(#arrow)"/>
+                    <defs>
+                        <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                            <polygon points="0,0 10,5 0,10" fill="#43e97b"/>
+                        </marker>
+                    </defs>
+                </svg>
+                <span class="img-caption">Ejemplo de movimiento: pelota lanzada</span>
+            </div>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Fórmula de velocidad:</span> v = d / t
+            </div>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Energía cinética:</span> Ec = ½ m v²
+            </div>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Energía potencial:</span> Ep = m g h
+            </div>
+            <canvas id="fisicaChart" width="320" height="180"></canvas>
+        </section>
+
+        <!-- Física: Fuerzas y Leyes de Newton -->
+        <section class="ciencias-section fade-in">
+            <h2>Física: Fuerzas y Leyes de Newton</h2>
+            <p>
+                Una fuerza es una acción capaz de cambiar el estado de movimiento de un cuerpo. Las Leyes de Newton explican cómo se mueven los objetos.
+            </p>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Primera Ley:</span> Un objeto en reposo permanece en reposo si no actúa una fuerza sobre él.
+            </div>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Segunda Ley:</span> F = m × a (fuerza = masa × aceleración)
+            </div>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Tercera Ley:</span> A toda acción corresponde una reacción igual y contraria.
+            </div>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Ejemplo de fuerza:</span> Empujar una caja, tirar de una cuerda.
+            </div>
+        </section>
+
+        <!-- Química -->
+        <section class="ciencias-section fade-in">
+            <h2>Química: Materia y Cambios</h2>
+            <p>
+                La química estudia la composición, estructura y cambios de la materia.<br>
+                <b>Ejemplo:</b> El agua (H₂O) es una molécula formada por hidrógeno y oxígeno.
+            </p>
+            <div class="ciencias-quimica-img">
+                <svg width="180" height="80" viewBox="0 0 180 80">
+                    <circle cx="90" cy="40" r="22" fill="#36e2f6" stroke="#1a6fa6" stroke-width="2"/>
+                    <circle cx="60" cy="60" r="13" fill="#43e97b" stroke="#1a7f4e" stroke-width="2"/>
+                    <circle cx="120" cy="60" r="13" fill="#43e97b" stroke="#1a7f4e" stroke-width="2"/>
+                    <text x="90" y="45" font-size="18" text-anchor="middle" fill="#fff">O</text>
+                    <text x="60" y="65" font-size="14" text-anchor="middle" fill="#fff">H</text>
+                    <text x="120" y="65" font-size="14" text-anchor="middle" fill="#fff">H</text>
+                </svg>
+                <span class="img-caption">Molécula de agua (H₂O)</span>
+            </div>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Estados de la materia:</span> Sólido, líquido, gaseoso.
+            </div>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Cambio físico:</span> El hielo se derrite en agua.
+            </div>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Cambio químico:</span> El hierro se oxida formando óxido.
+            </div>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Mezclas y soluciones:</span> Una mezcla es la unión de dos o más sustancias sin reacción química.
+            </div>
+            <canvas id="quimicaChart" width="320" height="180"></canvas>
+        </section>
+
+        <!-- Química: Átomos y Tabla Periódica -->
+        <section class="ciencias-section fade-in">
+            <h2>Química: Átomos y Tabla Periódica</h2>
+            <p>
+                El átomo es la partícula más pequeña de la materia. Los elementos se organizan en la tabla periódica.
+            </p>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Partes del átomo:</span> Núcleo (protones y neutrones) y corteza (electrones).
+            </div>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Ejemplo de elemento:</span> El oxígeno (O) es esencial para la respiración.
+            </div>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Tabla periódica:</span> Agrupa los elementos según sus propiedades.
+            </div>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Moléculas importantes:</span> CO₂ (dióxido de carbono), O₂ (oxígeno), NaCl (sal común).
+            </div>
+        </section>
+
+        <!-- Experimentos y Ciencia en la Vida Diaria -->
+        <section class="ciencias-section fade-in">
+            <h2>Experimentos y Ciencia en la Vida Diaria</h2>
+            <p>
+                La ciencia está presente en todo lo que hacemos. ¡Puedes experimentar en casa!
+            </p>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Ejemplo:</span> Mezcla vinagre y bicarbonato para ver una reacción química (liberación de gas).
+            </div>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Observa:</span> El arcoíris es el resultado de la refracción y dispersión de la luz.
+            </div>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Cocina:</span> Cocinar es una combinación de cambios físicos y químicos.
+            </div>
+            <div class="ciencias-example">
+                <span class="ciencias-label">Cuidado en casa:</span> Separar residuos, ahorrar agua y energía, cuidar las plantas.
+            </div>
+        </section>
+    </div>
+    <script src="js/script7.js"></script>
+</body>
+</html>
