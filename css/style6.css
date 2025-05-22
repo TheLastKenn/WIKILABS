@@ -1,0 +1,636 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500&display=swap');
+
+body {
+    background-image: url("../DCIM/BACKGROUND/1.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.header {
+    width: 100%;
+    height: 60px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeDown 1s ease forwards;
+}
+
+.header-menu {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.logo {
+    max-width: 100px;
+    height: auto;
+    margin-right: 0;
+}
+
+.header-menu ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    margin: 0 10px 0 0;
+    padding: 0;
+}
+
+.header-menu ul li {
+    display: inline-block;
+}
+
+.nav-menu-link {
+    text-decoration: none;
+    color: #36e2f6;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: solid 2px transparent;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-menu-link:hover {
+    color: #ffffff;
+    border-color: #000000;
+    box-shadow: 0 4px 8px rgba(54, 226, 246, 0.3);
+    background: #000000;
+}
+
+.math-container {
+    margin-top: 100px;
+    padding: 40px 20px 40px 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(0,0,0,0.4);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
+        /* Animación de profundidad */
+    transition: box-shadow 0.5s cubic-bezier(.25,.8,.25,1), transform 0.5s cubic-bezier(.25,.8,.25,1);
+}
+.math-container.depth-animate:hover {
+    box-shadow: 0 16px 48px rgba(54, 226, 246, 0.25), 0 2px 8px rgba(0,0,0,0.15);
+    transform: translateY(-8px) scale(1.01);
+}
+
+.math-title {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 900;
+    color: #fff; /* Cambiado a blanco para mejor contraste */
+    font-size: 2.1rem;
+    margin-bottom: 0;
+    margin-top: 18px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px #36b6e2, 0 1px 0 #000; /* Sombra azul y negra para legibilidad */
+    text-align: center;
+}
+
+.math-slogan {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 600;
+    color: #36b6e2;
+    font-size: 1.12rem;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.math-section {
+    background: #fafdff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(54,226,246,0.07);
+    padding: 22px 22px 14px 22px;
+    margin: 28px 0 28px 0;
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: box-shadow 0.2s;
+}
+
+.math-section:hover {
+    box-shadow: 0 8px 32px rgba(54, 226, 246, 0.18), 0 2px 12px rgba(67, 233, 123, 0.10);
+    transform: translateY(-4px) scale(1.01);
+}
+
+.math-section h2 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 800;
+    color: #36b6e2;
+    font-size: 1.35rem;
+    margin-bottom: 12px;
+    margin-top: 0;
+    letter-spacing: 0.5px;
+}
+
+.math-section p {
+    color: #232526;
+    font-size: 1.07rem;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.math-section ul, .math-section ol {
+    margin-left: 18px;
+    margin-bottom: 10px;
+    padding-left: 18px;
+}
+
+.math-section ul li, .math-section ol li {
+    margin-bottom: 7px;
+    font-size: 1.04rem;
+    line-height: 1.5;
+}
+
+.math-section img {
+    margin-top: 14px;
+    margin-bottom: 8px;
+    max-width: 270px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(54,226,246,0.09);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.math-examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 16px;
+}
+
+.math-example {
+    background: linear-gradient(90deg, #e0f7fa 60%, #fafdff 100%);
+    border-left: 5px solid #36e2f6;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 1.08rem;
+    color: #1a6fa6;
+    margin-bottom: 0;
+    min-width: 170px;
+}
+
+.math-label {
+    font-weight: bold;
+    color: #222;
+}
+
+.math-algebra-img,
+.math-calc-img,
+.math-geometry-drawings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.math-algebra-img img,
+.math-calc-img img {
+    width: 180px;
+    margin-bottom: 6px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(54, 226, 246, 0.10);
+    background: #fff;
+}
+
+.img-caption {
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: 2px;
+}
+
+canvas {
+    margin-top: 10px;
+    margin-bottom: 8px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(54, 226, 246, 0.10);
+    /* Tamaño grande para gráficas */
+    max-width: 400px;
+    max-height: 240px;
+    width: 360px !important;
+    height: 180px !important;
+    display: block;
+}
+
+.math-graph-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 18px 0 10px 0;
+    width: 100%;
+}
+
+.math-graph-wrapper canvas {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 480px;
+    max-height: 320px;
+    aspect-ratio: 3/2;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(54, 226, 246, 0.13);
+    transition: box-shadow 0.4s cubic-bezier(.25,.8,.25,1), transform 0.4s cubic-bezier(.25,.8,.25,1);
+    cursor: pointer;
+}
+
+.math-graph-wrapper canvas:hover {
+    box-shadow: 0 8px 32px rgba(54, 226, 246, 0.22), 0 2px 16px rgba(67, 233, 123, 0.13);
+    transform: scale(1.04) translateY(-4px);
+    z-index: 2;
+}
+
+/* Elimina el estilo anterior de canvas para evitar conflictos */
+canvas:not(.math-graph-wrapper canvas) {
+    margin-top: 10px;
+    margin-bottom: 8px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(54, 226, 246, 0.10);
+    display: block;
+}
+
+/* Panel de gestión de contenidos para profesores */
+.profesor-panel-math {
+    margin: 32px auto 24px auto;
+    max-width: 700px;
+    background: rgba(54,226,246,0.07);
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(54,226,246,0.10);
+    padding: 18px 18px 24px 18px;
+    animation: depthIn 1.2s cubic-bezier(.25,.8,.25,1);
+}
+
+.toggle-menu-btn {
+    background: linear-gradient(90deg, #36e2f6 0%, #43e97b 100%);
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 10px 28px;
+    font-size: 1.08rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 18px;
+    transition: background 0.3s, transform 0.2s;
+}
+.toggle-menu-btn:hover {
+    background: linear-gradient(90deg, #43e97b 0%, #36e2f6 100%);
+    transform: scale(1.04);
+}
+
+.menu-contenido {
+    display: none;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(54,226,246,0.10);
+    padding: 18px 14px 14px 14px;
+    margin-bottom: 18px;
+    animation: fadeIn 0.5s;
+}
+
+.menu-contenido label {
+    font-weight: 600;
+    margin-top: 8px;
+    display: block;
+    color: #232526;
+}
+.menu-contenido input,
+.menu-contenido select,
+.menu-contenido textarea {
+    width: 100%;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    padding: 7px;
+    border-radius: 6px;
+    border: 1.5px solid #36e2f6;
+    font-size: 1rem;
+    font-family: 'Roboto', Arial, sans-serif;
+    box-sizing: border-box;
+}
+.menu-contenido textarea {
+    min-height: 60px;
+    resize: vertical;
+}
+.add-content-btn {
+    background: linear-gradient(90deg, #36e2f6 0%, #43e97b 100%);
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 10px 28px;
+    font-size: 1.08rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.3s, transform 0.2s;
+}
+.add-content-btn:hover {
+    background: linear-gradient(90deg, #43e97b 0%, #36e2f6 100%);
+    transform: scale(1.04);
+}
+.contenidos-math {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.contenido-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(54,226,246,0.10);
+    padding: 16px 14px 14px 14px;
+    position: relative;
+    border-left: 4px solid #36e2f6;
+    animation: fadeIn 0.6s;
+}
+.contenido-title {
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.contenido-actions {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    gap: 8px;
+}
+.contenido-actions button {
+    background: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.contenido-actions button.edit-btn {
+    background: #36e2f6;
+}
+.contenido-actions button:hover {
+    opacity: 0.85;
+}
+
+.ejemplo-math {
+    background: #eafcff;
+    border-left: 5px solid #36e2f6;
+    border-radius: 10px;
+    padding: 13px 15px 10px 15px;
+    margin: 16px 0 16px 0;
+    box-shadow: 0 2px 8px rgba(54,226,246,0.05);
+    font-size: 1.01rem;
+}
+.ejemplo-math-title {
+    color: #36b6e2;
+    font-weight: 700;
+    font-size: 1.04rem;
+    margin-bottom: 4px;
+}
+.ejemplo-math-step {
+    margin-bottom: 5px;
+    color: #232526;
+}
+.ejemplo-math-exp {
+    font-family: 'Courier New', monospace;
+    background: #d6f7ff;
+    border-radius: 5px;
+    padding: 2px 7px;
+    margin: 0 2px;
+    font-size: 1.01rem;
+}
+
+@media (max-width: 900px) {
+    .math-container {
+        max-width: 98vw;
+        padding: 20px 2vw;
+    }
+    .math-section {
+        padding: 18px 6vw 12px 6vw;
+    }
+}
+
+@media (max-width: 700px) {
+    .math-section {
+        padding: 12px 4vw 10px 4vw;
+        max-width: 98vw;
+    }
+    .math-title {
+        font-size: 1.3rem;
+    }
+    .math-section img {
+        max-width: 98vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .math-title {
+        font-size: 1.4rem;
+    }
+    .math-section h2 {
+        font-size: 1.1rem;
+    }
+    .math-section {
+        padding: 12px 2vw 8px 2vw;
+    }
+}
+
+@keyframes fadeDown {
+    0% { opacity: 0; transform: translateY(-40px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(40px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeInSection {
+    0% { opacity: 0; transform: translateY(40px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+
+.math-section.fade-in { opacity: 0; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* Fondo azul para aplicaciones y consejos */
+.math-section.bg-blue {
+    background: linear-gradient(120deg, #36b6e2 60%, #43e97b 100%);
+    color: #fff;
+    box-shadow: 0 4px 24px rgba(54,226,246,0.13), 0 2px 16px rgba(67,233,123,0.10);
+}
+.math-section.bg-blue h2,
+.math-section.bg-blue ul,
+.math-section.bg-blue li,
+.math-section.bg-blue p {
+    color: #fff !important;
+}
+.math-section.bg-blue .ejemplo-math,
+.math-section.bg-blue .ejemplo-math-title,
+.math-section.bg-blue .ejemplo-math-step {
+    color: #fff !important;
+}
+
+/* Ajuste de videos para mantener proporción y evitar espacios en blanco */
+.math-videos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    margin-top: 24px;
+    margin-bottom: 10px;
+}
+
+.math-video {
+    background: linear-gradient(120deg, #36e2f6 0%, #43e97b 100%);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(54,226,246,0.13), 0 2px 16px rgba(67,233,123,0.10);
+    padding: 14px 12px 10px 12px;
+    max-width: 340px;
+    min-width: 240px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.18s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s;
+}
+
+.math-video:hover {
+    transform: scale(1.03) translateY(-4px);
+    box-shadow: 0 8px 32px rgba(54,226,246,0.18), 0 2px 16px rgba(67,233,123,0.13);
+}
+
+/* Contenedor para mantener proporción 16:9 */
+.math-video .video-responsive {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #000;
+}
+
+.math-video iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 12px rgba(54,226,246,0.10);
+    background: #000;
+    min-width: unset;
+    min-height: unset;
+}
+
+.math-video-title {
+    color: #fff;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 1.08rem;
+    font-weight: 700;
+    margin-top: 12px;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(54,226,246,0.15);
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.math-video-recommendation {
+    margin-top: 10px;
+    background: #eafcff;
+    color: #1a6fa6;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 0.99rem;
+    text-align: center;
+    box-shadow: 0 1px 6px rgba(54,226,246,0.07);
+    font-family: 'Roboto', Arial, sans-serif;
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 900px) {
+    .math-videos {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+    }
+    .math-video {
+        max-width: 98vw;
+        min-width: 0;
+        width: 100%;
+    }
+}
+
+/* Responsive para ciencia */
+@media (max-width: 1100px) {
+    .ciencias-container {
+        max-width: 98vw;
+        padding: 24px 2vw 24px 2vw;
+    }
+    .ciencias-section {
+        max-width: 98vw;
+        padding: 16px 4vw 10px 4vw;
+    }
+}
+@media (max-width: 900px) {
+    .ciencias-container {
+        max-width: 99vw;
+        padding: 16px 1vw 16px 1vw;
+    }
+    .ciencias-section {
+        padding: 12px 2vw 8px 2vw;
+        max-width: 99vw;
+    }
+    .ciencias-title {
+        font-size: 1.5rem;
+    }
+    .ciencias-section h2 {
+        font-size: 1.1rem;
+    }
+    .ciencias-section img, .ciencias-bio-img svg, .ciencias-fisica-img svg, .ciencias-quimica-img svg {
+        max-width: 90vw;
+    }
+}
+@media (max-width: 600px) {
+    .ciencias-title {
+        font-size: 1.1rem;
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+    .ciencias-section {
+        padding: 8px 1vw 6px 1vw;
+        font-size: 0.98rem;
+    }
+    .ciencias-section h2 {
+        font-size: 1rem;
+    }
+    .ciencias-section img, .ciencias-bio-img svg, .ciencias-fisica-img svg, .ciencias-quimica-img svg {
+        max-width: 98vw;
+    }
+}
