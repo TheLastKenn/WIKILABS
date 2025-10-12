@@ -1,3 +1,5 @@
+import { verifyUserCredentials } from "../../../firebase.js";
+
 window.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.header');
     const container = document.querySelector('.register-container');
@@ -13,28 +15,30 @@ window.addEventListener('DOMContentLoaded', () => {
         }, 300);
     }
 
-    // Login sin base de datos
+    // Login con Firebase
     const form = document.getElementById('loginForm');
     if (form) {
-        form.addEventListener('submit', function(e) {
+        form.addEventListener('submit', async function(e) {
             e.preventDefault();
 
             const email = document.getElementById('email').value.trim().toLowerCase();
             const password = document.getElementById('password').value;
 
-            // Obtener usuarios registrados desde localStorage
-            let usuarios = JSON.parse(localStorage.getItem('wikilabs_usuarios') || '[]');
-            const usuario = usuarios.find(u => u.email === email && u.password === password);
-
-            if (usuario) {
-                // Guardar datos de sesión
-                localStorage.setItem('wikilabs_user', usuario.name);
-                localStorage.setItem('wikilabs_emoji', usuario.emoji);
-                localStorage.setItem('wikilabs_tipo', usuario.tipo);
-                localStorage.setItem('wikilabs_materia', usuario.materia || "");
-                window.location.href = "user.html";
-            } else {
-                alert('Correo o contraseña incorrectos, o el usuario no está registrado.');
+            try {
+                const usuario = await verifyUserCredentials(email, password);
+                if (usuario) {
+                    localStorage.setItem('wikilabs_user', usuario.name || "");
+                    localStorage.setItem('wikilabs_email', usuario.email || "");
+                    localStorage.setItem('wikilabs_emoji', usuario.emoji || "");
+                    localStorage.setItem('wikilabs_tipo', usuario.tipo || "");
+                    localStorage.setItem('wikilabs_materia', usuario.materia || "");
+                    window.location.href = "user.html";
+                } else {
+                    alert('Correo o contraseña incorrectos, o el usuario no está registrado.');
+                }
+            } catch (error) {
+                console.error('Error verificando credenciales en Firebase', error);
+                alert('No se pudo iniciar sesión. Revisa la consola para más detalles.');
             }
         });
     }
