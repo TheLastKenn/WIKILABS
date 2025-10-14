@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario | WikiLabs</title>
+    <link rel="stylesheet" href="css/style9.css">
+</head>
+<body>
+    <div class="header">
+        <nav class="header-menu">
+            <img src="DCIM/LOGOS/WIKILABS-WHITE.png" class="logo">
+            <ul class="nav">
+                <li class="nav-menu-item"><a href="cursos.html" class="nav-menu-link">Cursos</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="profile-container">
+        <div class="profile-card">
+            <div class="profile-emoji" id="profile-emoji">🦉</div>
+            <h2 id="username">Nombre de Usuario</h2>
+            <p id="user-type" class="user-type"></p>
+            <p id="user-materia" class="user-materia"></p>
+            <p id="user-streak" class="user-streak"></p>
+        </div>
+        <!-- Contenido dinámico según tipo de usuario -->
+        <div id="alumno-section" class="stats-section" style="display:none;">
+            <h3>Estadísticas de Cursos</h3>
+            <div class="stats-list">
+                <div class="stat-item">
+                    <span class="stat-course">Matemáticas</span>
+                    <span class="stat-time" id="math-time">0 min</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-course">Ciencias</span>
+                    <span class="stat-time" id="science-time">0 min</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-course">Historia</span>
+                    <span class="stat-time" id="history-time">0 min</span>
+                </div>
+            </div>
+            <h3>Progreso Diario</h3>
+            <canvas id="progressChart"></canvas>
+            <button id="logout-btn" class="logout-btn-standalone">Cerrar sesión</button>
+        </div>
+        <div id="profesor-section" class="profesor-section" style="display:none;">
+            <h3>Panel de Profesor</h3>
+            <p>Accede a tu curso para gestionar tus contenidos:</p>
+            <button id="go-curso-btn" class="go-curso-btn">Ir a mi curso</button>
+            <button id="logout-btn-prof" class="logout-btn-standalone">Cerrar sesión</button>
+            <div id="logout-message-prof" class="logout-message" style="display:none;">Cerrando sesión... Serás redirigido al inicio.</div>
+        </div>
+    </div>
+    <div id="logout-message" class="logout-message">Sesión cerrada. Redirigiendo...</div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script9.js"></script>
+</body>
+</html>

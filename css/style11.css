@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500&display=swap');
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', Arial, sans-serif;
+	min-height: 100vh;
+	background: url("../DCIM/BACKGROUND/FONDO2.jpg") center/cover no-repeat;
+}
+
+.header {
+	width: 100%;
+	height: 60px;
+	padding: 0 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #2F3192;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	opacity: 0;
+	animation: fadeDown 1s ease forwards;
+}
+
+.header-menu {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	justify-content: flex-start;
+	gap: 20px;
+	padding: 0;
+}
+
+.logo {
+	max-width: 100px;
+	height: auto;
+	margin-right: 0;
+}
+
+.header-menu ul {
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	list-style: none;
+	margin: 0 10px 0 0;
+	padding: 0;
+}
+
+.header-menu ul li {
+	display: inline-block;
+}
+
+.nav-menu-link {
+	text-decoration: none;
+	color: #2F3192;
+	font-size: 1rem;
+	font-weight: bold;
+	padding: 10px 15px;
+	border: 2px solid #2F3192;
+	background: #FFD966;
+	border-radius: 6px;
+	transition: all 0.3s ease;
+}
+
+.nav-menu-link:hover {
+	color: #FFD966;
+	background: #2F3192;
+	border-color: #2F3192;
+	box-shadow: 0 4px 12px rgba(47,49,146,0.3);
+}
+
+.eval-container {
+	margin-top: 100px;
+	padding: 40px 20px 40px 20px;
+	max-width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	background: rgba(255,255,255,0.7);
+	border-radius: 16px;
+	box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+	animation: fadeUp 1s ease forwards;
+	opacity: 0;
+}
+
+.eval-title {
+	font-family: 'Montserrat', Arial, sans-serif;
+	font-weight: 900;
+	color: #2F3192;
+	font-size: 2.3rem;
+	margin-bottom: 10px;
+	letter-spacing: 1px;
+	text-shadow: 0 1px 0 #fff;
+	text-align: center;
+}
+
+.eval-slogan {
+	font-family: 'Montserrat', Arial, sans-serif;
+	font-weight: 700;
+	color: #FF61A6;
+	font-size: 1.3rem;
+	margin-bottom: 32px;
+	text-align: center;
+}
+
+.eval-tabs {
+	display: flex;
+	justify-content: center;
+	gap: 18px;
+	margin-bottom: 32px;
+}
+
+.eval-tab {
+	font-family: 'Montserrat', Arial, sans-serif;
+	font-weight: 700;
+	font-size: 1.1rem;
+	color: #2F3192;
+	background: #FFD966;
+	border: 2px solid #2F3192;
+	border-radius: 8px 8px 0 0;
+	padding: 10px 28px;
+	cursor: pointer;
+	transition: all 0.3s;
+	outline: none;
+}
+
+.eval-tab.active {
+	background: #2F3192;
+	color: #FFD966;
+	box-shadow: 0 4px 12px rgba(47,49,146,0.15);
+}
+
+#eval-content {
+	animation: fadeInSection 1s ease forwards;
+	opacity: 0;
+}
+
+.eval-question {
+	background: #fafdff;
+	border-radius: 14px;
+	box-shadow: 0 4px 16px rgba(47, 49, 146, 0.10);
+	padding: 24px 18px 18px 18px;
+	margin-bottom: 28px;
+	animation: fadeInSection 1s ease forwards;
+	opacity: 0;
+}
+
+.eval-q-title {
+	font-family: 'Montserrat', Arial, sans-serif;
+	font-weight: 700;
+	color: #2F3192;
+	font-size: 1.15rem;
+	margin-bottom: 12px;
+}
+
+.eval-q-options {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.eval-q-option {
+	background: #FFD966;
+	color: #2F3192;
+	border: 2px solid #2F3192;
+	border-radius: 8px;
+	padding: 10px 16px;
+	font-size: 1rem;
+	font-family: 'Roboto', Arial, sans-serif;
+	cursor: pointer;
+	transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.eval-q-option.selected {
+	background: #2F3192;
+	color: #FFD966;
+	box-shadow: 0 4px 12px rgba(47,49,146,0.15);
+}
+
+.eval-q-option:hover {
+	background: #FF61A6;
+	color: #fff;
+}
+
+.eval-result {
+	margin-top: 24px;
+	font-size: 1.2rem;
+	font-family: 'Montserrat', Arial, sans-serif;
+	color: #2F3192;
+	text-align: center;
+	font-weight: 700;
+	background: #FFD966;
+	border-radius: 10px;
+	padding: 18px 10px;
+	box-shadow: 0 2px 8px rgba(47,49,146,0.10);
+	display: none;
+}
+
+@keyframes fadeDown {
+	0% { opacity: 0; transform: translateY(-40px);}
+	100% { opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeUp {
+	0% { opacity: 0; transform: translateY(40px);}
+	100% { opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeInSection {
+	0% { opacity: 0; transform: translateY(40px);}
+	100% { opacity: 1; transform: translateY(0);}
+}

@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+/* Base */
+:root {
+  --primary: #2F3192;
+  --accent: #FFD966;
+  --pink: #FF61A6;
+  --ink: #2F3192;
+  --paper: #ffffff;
+  --paper-soft: #fffbe9;
+  --shadow-1: 0 2px 6px rgba(47,49,146,0.08);
+  --shadow-2: 0 4px 12px rgba(47,49,146,0.15);
+  --shadow-3: 0 8px 24px rgba(47,49,146,0.18);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Montserrat', Arial, sans-serif;
+  /* Updated background for performance and consistency */
+  background: url('../DCIM/BACKGROUND/FONDO2.jpg') center/cover no-repeat;
+}
+
+/* Header / Nav (style1 theme) */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 60px;
+  padding: 0 20px;
+  background: var(--primary);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-2);
+  z-index: 1000;
+}
+.header-menu { display: flex; align-items: center; gap: 28px; width: 100%; }
+.logo { max-width: 100px; height: auto; margin-right: 24px; }
+.nav { display: flex; gap: 18px; list-style: none; margin: 0; padding: 0; }
+.nav-menu-item { display: flex; align-items: center; }
+.nav-menu-link {
+  text-decoration: none;
+  color: var(--primary);
+  background: var(--accent);
+  border: 2px solid var(--primary);
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-weight: 700;
+  box-shadow: var(--shadow-1);
+  transition: background .3s, color .3s, transform .2s, box-shadow .3s;
+}
+.nav-menu-link:hover, .nav-menu-link:focus {
+  color: var(--accent);
+  background: var(--primary);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: var(--shadow-3);
+}
+
+/* Layout spacing below fixed header */
+.profile-container {
+  margin-top: 90px;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  /* Space out children to avoid overlap of floating/animated blocks */
+  gap: 20px;
+}
+
+/* Profile card */
+.profile-card {
+  width: 100%;
+  max-width: 520px;
+  background: var(--paper);
+  border-radius: 18px;
+  padding: 28px 32px 22px 32px;
+  text-align: center;
+  box-shadow: var(--shadow-2);
+  animation: fadeInUp .9s ease both;
+}
+.profile-emoji {
+  width: 110px; height: 110px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 4rem; user-select: none;
+  background: var(--paper);
+  border: 4px solid var(--pink);
+  box-shadow: 0 2px 12px rgba(47,49,146,0.12);
+  margin: 0 auto 14px;
+}
+#username { color: var(--ink); font-size: 1.6rem; margin: 0 0 6px 0; letter-spacing: .3px; }
+.user-type { color: var(--pink); margin: 0 0 8px 0; font-weight: 700; }
+.user-materia { color: var(--ink); margin: 0; }
+
+/* Racha (streak) display */
+.user-streak {
+  color: var(--primary);
+  font-weight: 800;
+  margin: 8px 0 0 0;
+}
+
+/* Alumno stats */
+.stats-section {
+  width: 100%;
+  max-width: 720px;
+  background: var(--paper);
+  border-radius: 16px;
+  box-shadow: var(--shadow-2);
+  padding: 24px 28px 36px 28px;
+  display: none; /* toggled by JS */
+  animation: fadeInUp 1s ease both;
+  /* Ensure separation from card above even if gap is not supported */
+  margin-top: 8px;
+}
+.stats-section h3 { color: var(--ink); margin: 0 0 12px 0; }
+.stats-list { display: flex; flex-wrap: wrap; gap: 16px; margin: 0 0 18px 0; }
+.stat-item {
+  flex: 1 1 30%; min-width: 160px; max-width: 220px;
+  background: var(--paper-soft);
+  color: var(--ink);
+  border-radius: 10px;
+  padding: 12px 10px;
+  text-align: center;
+}
+.stat-course { font-weight: 700; margin-bottom: 6px; }
+.stat-time { font-weight: 800; color: var(--pink); }
+
+#progressChart {
+  width: 100% !important; max-width: 640px; min-height: 300px;
+  background: #fff; border-radius: 16px; border: 1.5px solid var(--primary);
+  box-shadow: 0 2px 16px rgba(47,49,146,0.12);
+  transition: box-shadow .3s, transform .3s;
+}
+#progressChart:hover { box-shadow: var(--shadow-3); transform: scale(1.02) translateY(-4px); }
+
+/* Placeholder for when there is no chart data */
+.chart-placeholder {
+  width: 100%;
+  max-width: 640px;
+  min-height: 300px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: var(--paper-soft);
+  color: var(--ink);
+  border: 1.5px dashed var(--primary);
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(47,49,146,0.08);
+  padding: 16px;
+}
+
+/* Profesor section */
+.profesor-section {
+  display: none; /* toggled by JS */
+  width: 100%; max-width: 520px;
+  margin: 24px auto 0; padding: 28px 24px 32px;
+  background: var(--paper-soft);
+  border-radius: 18px; box-shadow: var(--shadow-2);
+  animation: fadeInUp 1s ease both;
+}
+.profesor-section h3 { color: var(--ink); margin: 0 0 8px 0; }
+.profesor-section p { color: var(--ink); font-weight: 600; margin: 0 0 18px 0; }
+
+.go-curso-btn, .logout-btn-standalone, .add-content-btn {
+  display: inline-block;
+  margin: 12px auto 0; padding: 12px 28px;
+  font-size: 1rem; font-weight: 800; letter-spacing: .3px;
+  color: #fff; background: var(--pink);
+  border: 2px solid var(--pink); border-radius: 28px;
+  box-shadow: 0 4px 20px rgba(255,97,166,0.18);
+  cursor: pointer; transition: background .3s, color .3s, transform .2s, box-shadow .3s;
+}
+.go-curso-btn:hover, .logout-btn-standalone:hover, .add-content-btn:hover {
+  background: var(--accent); color: var(--primary); border-color: var(--primary);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: var(--shadow-3);
+}
+
+/* Profesor content panel */
+.profesor-content-panel {
+  margin-top: 22px; background: var(--paper);
+  border-radius: 14px; box-shadow: var(--shadow-1);
+  padding: 18px;
+}
+.profesor-content-panel h4 { color: var(--ink); text-align: center; margin: 0 0 12px; }
+.add-content-form label { display: block; margin-top: 8px; color: var(--ink); font-weight: 600; }
+.add-content-form input, .add-content-form select, .add-content-form textarea {
+  width: 100%; margin-top: 4px; padding: 8px; font-family: inherit; font-size: 1rem;
+  border: 1.5px solid var(--primary); border-radius: 6px;
+}
+.add-content-form textarea { min-height: 70px; resize: vertical; }
+
+.curso-contenidos { margin-top: 18px; display: flex; flex-direction: column; gap: 14px; }
+.curso-content-item {
+  background: var(--paper); border-radius: 10px; padding: 14px; position: relative;
+  border-left: 4px solid var(--primary); box-shadow: 0 2px 8px rgba(47,49,146,0.10);
+  animation: fadeIn .5s ease both;
+}
+.curso-content-title { color: var(--ink); font-weight: 800; margin-bottom: 6px; }
+.curso-content-actions { position: absolute; top: 10px; right: 10px; display: flex; gap: 8px; }
+.curso-content-actions button { border: none; border-radius: 6px; padding: 4px 10px; color: #fff; cursor: pointer; }
+.curso-content-actions .edit-btn { background: var(--pink); }
+.curso-content-actions .delete-btn { background: #f44336; }
+
+/* Logout toast */
+.logout-message {
+  display: none; position: fixed; left: 50%; top: 18%; transform: translate(-50%, 0);
+  background: var(--primary); color: #fff; padding: 14px 24px; border-radius: 14px;
+  box-shadow: var(--shadow-3); z-index: 2000; animation: fadeOutMsg 1.8s ease both;
+}
+@keyframes fadeOutMsg { 0%{opacity:0} 10%{opacity:1} 80%{opacity:1} 100%{opacity:0} }
+
+/* Animations aligned with style1 */
+@keyframes fadeInUp { from {opacity: 0; transform: translateY(30px);} to {opacity:1; transform: translateY(0);} }
+@keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+@keyframes fadeInLeft { from {opacity:0; transform: translateX(-60px);} to {opacity:1; transform: translateX(0);} }
+@keyframes fadeInRight { from {opacity:0; transform: translateX(60px);} to {opacity:1; transform: translateX(0);} }
+@keyframes fadeInScale { from {opacity:0; transform: scale(0.9);} to {opacity:1; transform: scale(1);} }
+
+.animated-fadeInUp { animation: fadeInUp 1s ease both; }
+.animated-fadeIn { animation: fadeIn 1.2s ease both; }
+.animated-fadeInLeft { animation: fadeInLeft 1s ease both; }
+.animated-fadeInRight { animation: fadeInRight 1s ease both; }
+.animated-fadeInScale { animation: fadeInScale .9s ease both; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .profile-card { max-width: 94vw; }
+  .stats-section, .profesor-section { max-width: 94vw; }
+}
+@media (max-width: 600px) {
+  .header { height: auto; padding: 10px 12px; flex-direction: column; gap: 8px; }
+  .logo { max-width: 80px; }
+  .nav { gap: 10px; }
+  .nav-menu-link { padding: 8px 10px; }
+  .profile-container { margin-top: 104px; }
+}
