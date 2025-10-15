@@ -42,18 +42,25 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Obtener usuario y emoji reales
     const username = localStorage.getItem('wikilabs_user') || "Usuario";
+    const email = localStorage.getItem('wikilabs_email') || "";
     const emoji = localStorage.getItem('wikilabs_emoji') || "🦉";
     const tipo = localStorage.getItem('wikilabs_tipo') || "alumno";
-    const usuarios = JSON.parse(localStorage.getItem('wikilabs_usuarios') || '[]');
-    const usuario = usuarios.find(u => u.name === username);
+    const materiaSeleccionada = localStorage.getItem('wikilabs_materia') || "";
 
     // Mostrar datos básicos
     document.getElementById('username').textContent = username;
     document.getElementById('profile-emoji').textContent = emoji;
     document.getElementById('user-type').textContent = tipo ? `Tipo: ${tipo.charAt(0).toUpperCase() + tipo.slice(1)}` : '';
-    if (tipo === "profesor" && usuario && usuario.materia) {
+    if (email) {
+        const emailNode = document.getElementById('user-email');
+        if (emailNode) {
+            emailNode.textContent = email;
+        }
+    }
+
+    if (tipo === "profesor" && materiaSeleccionada) {
         const materiaMap = { matematicas: 'Matemáticas', historia: 'Historia', biologia: 'Biología' };
-        document.getElementById('user-materia').textContent = `Materia: ${materiaMap[usuario.materia] || ''}`;
+        document.getElementById('user-materia').textContent = `Materia: ${materiaMap[materiaSeleccionada] || ''}`;
     } else {
         document.getElementById('user-materia').textContent = "";
     }
@@ -69,14 +76,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
         // Botón para ir al curso correspondiente
         const goCursoBtn = document.getElementById('go-curso-btn');
-        if (usuario && usuario.materia) {
-            if (usuario.materia === "matematicas") {
+        if (materiaSeleccionada) {
+            if (materiaSeleccionada === "matematicas") {
                 goCursoBtn.onclick = () => window.location.href = "math.html";
                 goCursoBtn.textContent = "Ir a Matemáticas";
-            } else if (usuario.materia === "historia") {
+            } else if (materiaSeleccionada === "historia") {
                 goCursoBtn.onclick = () => window.location.href = "history.html";
                 goCursoBtn.textContent = "Ir a Historia";
-            } else if (usuario.materia === "biologia") {
+            } else if (materiaSeleccionada === "biologia") {
                 goCursoBtn.onclick = () => window.location.href = "ciencia.html";
                 goCursoBtn.textContent = "Ir a Biología";
             }
@@ -95,7 +102,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }, 1800);
         };
 
-        const contentKey = `wikilabs_contenidos_${usuario?.materia || "general"}`;
+    const contentKey = `wikilabs_contenidos_${materiaSeleccionada || "general"}`;
         const contentForm = document.getElementById('add-content-form');
         const contentList = document.getElementById('curso-contenidos');
 
