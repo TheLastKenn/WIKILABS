@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="css/style1.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="header-menu">
+            <img src="DCIM/LOGOS/WIKILABS-WHITE.png" class="logo" alt="Logo WikiLabs">
+            <button class="nav-toggle" aria-label="Abrir menú">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <ul class="nav">
+                <li class="nav-menu-item"><a href="index.html" class="nav-menu-link">INICIO</a></li>
+                <li class="nav-menu-item"><a href="contact.html" class="nav-menu-link">CONTACTANOS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="section-1 fondo1-bg" style="min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+            <div class="main-login-block" style="background: #fffbe9; border-radius: 18px; box-shadow: 0 8px 32px rgba(47,49,146,0.12); padding: 40px 32px; max-width: 400px; width: 100%; text-align: center;">
+                <h1 class="main-title" style="color: #2F3192; font-family: 'Montserrat', Arial, sans-serif; font-weight: 900;">Iniciar Sesión</h1>
+                <form id="loginForm" class="main-login-form" autocomplete="off" style="display: flex; flex-direction: column; gap: 18px;">
+                    <label for="email" style="text-align: left; color: #2F3192; font-weight: 500;">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required style="padding: 10px; font-size: 1rem; border-radius: 6px; border: 2px solid #2F3192;">
+                    <label for="password" style="text-align: left; color: #2F3192; font-weight: 500;">Contraseña</label>
+                    <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required style="padding: 10px; font-size: 1rem; border-radius: 6px; border: 2px solid #2F3192;">
+                    <button type="submit" class="main-register-btn" style="margin-top: 10px;">Entrar</button>
+                </form>
+                <p class="main-section-text" style="margin-top: 18px; color: #2F3192;">¿No tienes cuenta? <a href="register.html" style="color: #00C49A; text-decoration: underline; font-weight: bold;">Regístrate aquí</a></p>
+            </div>
+        </section>
+    </main>
+    <script src="js/script1.js"></script>
+    <script src="js/script3.js"></script>
+</body>
+</html>
