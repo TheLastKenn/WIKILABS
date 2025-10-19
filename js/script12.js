@@ -17,6 +17,43 @@ document.addEventListener('DOMContentLoaded', () => {
         .replace(/\s+/g, '')
         .replace(/,/g, '.');
 
+    // Formats inline math spans so expressions render with superscripts and stacked fractions.
+    const escapeHtml = (value) => (value || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+
+    const buildFraction = (numerator, denominator) => `<span class="math-frac"><span class="math-frac-num">${numerator}</span><span class="math-frac-bar"></span><span class="math-frac-den">${denominator}</span></span>`;
+
+    const formatMathMarkup = (value) => {
+        let html = escapeHtml(value);
+
+        html = html.replace(/\\frac\s*\{([^}]+)\}\s*\{([^}]+)\}/g, (_, numerator, denominator) =>
+            buildFraction(numerator.trim(), denominator.trim()));
+
+        html = html.replace(/([A-Za-zÁÉÍÓÚáéíóúÑñ0-9)\]])\^\{([^}]+)\}/g, (_, base, exponent) =>
+            `${base}<sup>${exponent}</sup>`);
+
+        html = html.replace(/([A-Za-zÁÉÍÓÚáéíóúÑñ0-9)\]])\^(-?\d+)/g, (_, base, exponent) =>
+            `${base}<sup>${exponent}</sup>`);
+
+        html = html.replace(/\\cdot/g, '·');
+        html = html.replace(/\\times/g, '×');
+
+        return html;
+    };
+
+    const upgradeMathInline = (root = document) => {
+        if (!root || typeof root.querySelectorAll !== 'function') return;
+        const targets = root.querySelectorAll('.math-inline');
+        targets.forEach((node) => {
+            if (node.dataset.mathProcessed === 'true') return;
+            const source = node.textContent || '';
+            node.innerHTML = formatMathMarkup(source);
+            node.dataset.mathProcessed = 'true';
+        });
+    };
+
     const questionStacks = document.querySelectorAll('.question-stack');
     questionStacks.forEach((stack) => {
         const desired = parseInt(stack.dataset.randomCount || stack.dataset.randomcount || '', 10);
@@ -356,4 +393,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+
+    upgradeMathInline();
 });

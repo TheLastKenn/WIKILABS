@@ -17,9 +17,49 @@ document.querySelectorAll(".reveal-on-scroll").forEach((element) => {
     revealObserver.observe(element);
 });
 
-const navLinks = Array.from(document.querySelectorAll('.landing-link[href^="#"]'));
+// Formats inline math spans so hero equations preserve readable notation.
+const escapeHtml = (value) => (value || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
 
-navLinks.forEach((link) => {
+const buildFraction = (numerator, denominator) => `<span class="math-frac"><span class="math-frac-num">${numerator}</span><span class="math-frac-bar"></span><span class="math-frac-den">${denominator}</span></span>`;
+
+const formatMathMarkup = (value) => {
+    let html = escapeHtml(value);
+
+    html = html.replace(/\\frac\s*\{([^}]+)\}\s*\{([^}]+)\}/g, (_, numerator, denominator) =>
+        buildFraction(numerator.trim(), denominator.trim()));
+
+    html = html.replace(/([A-Za-zÁÉÍÓÚáéíóúÑñ0-9)\]])\^\{([^}]+)\}/g, (_, base, exponent) =>
+        `${base}<sup>${exponent}</sup>`);
+
+    html = html.replace(/([A-Za-zÁÉÍÓÚáéíóúÑñ0-9)\]])\^(-?\d+)/g, (_, base, exponent) =>
+        `${base}<sup>${exponent}</sup>`);
+
+    html = html.replace(/\\cdot/g, '·');
+    html = html.replace(/\\times/g, '×');
+
+    return html;
+};
+
+const upgradeMathInline = (root = document) => {
+    if (!root || typeof root.querySelectorAll !== 'function') return;
+    const targets = root.querySelectorAll('.math-inline');
+    targets.forEach((node) => {
+        if (node.dataset.mathProcessed === 'true') return;
+        const source = node.textContent || '';
+        node.innerHTML = formatMathMarkup(source);
+        node.dataset.mathProcessed = 'true';
+    });
+};
+
+const scrollTriggers = Array.from(new Set([
+    ...document.querySelectorAll('.landing-link[href^="#"]'),
+    ...document.querySelectorAll('[data-scroll="true"]')
+]));
+
+scrollTriggers.forEach((link) => {
     link.addEventListener("click", (event) => {
         const targetId = link.getAttribute("href")?.replace(/^[#]/, "");
 
@@ -98,3 +138,5 @@ if (prefersReducedMotion()) {
         floater.style.animationDuration = "0s";
     });
 }
+
+upgradeMathInline();

@@ -33,6 +33,55 @@ a {
     color: inherit;
 }
 
+.math-inline {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 4px;
+    font-family: 'STIX Two Text', 'Cambria', 'Georgia', serif;
+    font-weight: 600;
+    font-style: italic;
+    padding: 2px 6px;
+    border-radius: 6px;
+    background: rgba(47, 49, 146, 0.06);
+    letter-spacing: 0.1px;
+    line-height: 1.1;
+}
+
+.math-inline sup,
+.math-inline sub {
+    font-size: 0.72em;
+    line-height: 0;
+    font-weight: 600;
+}
+
+.math-inline sup {
+    margin-left: 1px;
+}
+
+.math-inline sub {
+    margin-right: 2px;
+}
+
+.math-frac {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.1;
+    margin: 0 2px;
+}
+
+.math-frac-num,
+.math-frac-den {
+    display: block;
+    padding: 0 2px;
+}
+
+.math-frac-bar {
+    width: 100%;
+    border-top: 1.5px solid currentColor;
+    margin: 2px 0;
+}
+
 .landing-header {
     position: sticky;
     top: 0;
@@ -80,6 +129,8 @@ a {
     align-items: center;
     gap: 6px;
     font-weight: 700;
+    font-size: 0.92rem;
+    letter-spacing: 0.2px;
     padding: 8px 0;
     text-decoration: none;
     color: rgba(255, 255, 255, 0.82);
@@ -115,6 +166,27 @@ a {
     gap: 12px;
 }
 
+.landing-actions .grade-pill {
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 160px;
+    line-height: 1.16;
+    padding: 11px 20px;
+    box-shadow: 0 20px 36px rgba(54, 226, 246, 0.26);
+}
+
+.landing-actions .grade-pill span {
+    font-size: 0.95rem;
+    font-weight: 800;
+}
+
+.landing-actions .grade-pill small {
+    font-size: 0.74rem;
+    font-weight: 600;
+    opacity: 0.82;
+    letter-spacing: 0.3px;
+}
+
 .landing-actions .ghost-pill {
     border-color: rgba(255, 255, 255, 0.32);
     background: rgba(255, 255, 255, 0.18);
@@ -137,9 +209,10 @@ a {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 10px 20px;
+    padding: 9px 18px;
     border-radius: 999px;
     font-weight: 700;
+    font-size: 0.9rem;
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
@@ -171,21 +244,31 @@ a {
 .landing-page {
     max-width: 1180px;
     margin: 0 auto;
-    padding: 48px 24px 120px;
+    padding: 44px 24px 110px;
     display: grid;
-    gap: 72px;
+    gap: 64px;
 }
 
 .hero {
     position: relative;
     border-radius: 36px;
-    padding: 54px;
+    padding: 48px;
     background: linear-gradient(135deg, rgba(47, 49, 146, 0.92), rgba(54, 226, 246, 0.9));
     background-size: 220% 220%;
     color: #fff;
     overflow: hidden;
     box-shadow: var(--shadow-2);
     animation: heroWave 20s ease-in-out infinite;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: -30%;
+    background: radial-gradient(circle at calc(var(--pointer-x, 0.5) * 100%) calc(var(--pointer-y, 0.5) * 100%), rgba(255, 217, 102, 0.32), transparent 65%);
+    transition: opacity 0.6s ease;
+    opacity: 0.7;
+    pointer-events: none;
 }
 
 .hero-grid {
@@ -197,9 +280,16 @@ a {
     align-items: flex-start;
 }
 
+.hero-card p {
+    margin: 8px 0 0;
+    font-size: 0.9rem;
+    line-height: 1.44;
+    color: rgba(255, 255, 255, 0.78);
+}
+
 .hero-copy {
     display: grid;
-    gap: 18px;
+    gap: 16px;
     max-width: 600px;
 }
 
@@ -218,14 +308,14 @@ a {
 
 .hero h1 {
     margin: 0;
-    font-size: 3rem;
-    line-height: 1.08;
+    font-size: 2.2rem;
+    line-height: 1.12;
 }
 
 .hero p {
     margin: 0;
-    font-size: 1.1rem;
-    line-height: 1.6;
+    font-size: 0.98rem;
+    line-height: 1.55;
     color: rgba(255, 255, 255, 0.85);
 }
 
@@ -235,14 +325,40 @@ a {
     gap: 14px;
 }
 
+.hero-insights {
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 10px;
+}
+
+.hero-insights li {
+    position: relative;
+    padding-left: 22px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+
+.hero-insights li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent);
+    font-size: 0.9rem;
+}
+
 .hero-cta,
 .hero-ghost {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 12px 26px;
+    padding: 10px 22px;
     border-radius: 999px;
     font-weight: 800;
+    font-size: 0.9rem;
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
@@ -250,13 +366,13 @@ a {
 .hero-cta {
     background: var(--accent);
     color: var(--ink);
-    box-shadow: 0 18px 36px rgba(255, 217, 102, 0.28);
+    box-shadow: 0 16px 32px rgba(255, 217, 102, 0.28);
 }
 
 .hero-cta:hover,
 .hero-cta:focus-visible {
     transform: translateY(-2px);
-    box-shadow: 0 26px 48px rgba(255, 217, 102, 0.34);
+    box-shadow: 0 24px 44px rgba(255, 217, 102, 0.32);
 }
 
 .hero-ghost {
@@ -289,20 +405,50 @@ a {
 
 .hero-stats dt {
     margin: 0;
-    font-size: 2.2rem;
+    font-size: 1.6rem;
     font-weight: 900;
 }
 
 .hero-stats dd {
     margin: 4px 0 0;
-    font-size: 0.92rem;
+    font-size: 0.84rem;
     color: rgba(255, 255, 255, 0.78);
+}
+
+.hero-equations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.hero-equations span {
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(21, 23, 58, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    font-family: 'Fira Code', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.2px;
+    animation: equationFloat 12s ease-in-out infinite;
+}
+
+.hero-equations span:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.hero-equations span:nth-child(3) {
+    animation-delay: 4s;
+}
+
+.hero-equations span:nth-child(4) {
+    animation-delay: 6s;
 }
 
 .hero-preview {
     display: grid;
-    gap: 16px;
-    padding: 28px 26px;
+    gap: 14px;
+    padding: 24px 22px;
     border-radius: 24px;
     background: rgba(12, 14, 44, 0.45);
     backdrop-filter: blur(12px);
@@ -310,9 +456,99 @@ a {
     box-shadow: 0 16px 36px rgba(8, 10, 32, 0.45);
 }
 
+.hero-preview .hero-visual {
+    margin: 0;
+    border-radius: 18px;
+    overflow: hidden;
+    background: rgba(12, 14, 44, 0.55);
+    border: 1px solid rgba(122, 229, 197, 0.18);
+    box-shadow: 0 18px 36px rgba(8, 10, 32, 0.42);
+    display: grid;
+    gap: 10px;
+}
+
+.hero-preview .hero-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.hero-preview .hero-visual figcaption {
+    margin: 0;
+    padding: 10px 16px 14px;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.78);
+    background: linear-gradient(180deg, rgba(12, 14, 44, 0.78), rgba(12, 14, 44, 0.92));
+}
+
+.hero-preview .hero-video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    border-radius: 18px;
+    background: rgba(12, 14, 44, 0.6);
+    border: 1px solid rgba(122, 229, 197, 0.18);
+    box-shadow: 0 16px 30px rgba(8, 10, 32, 0.38);
+    min-height: 180px;
+}
+
+.hero-preview .video-placeholder {
+    display: grid;
+    gap: 12px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.hero-preview .video-placeholder p {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.74);
+}
+
+.hero-preview .video-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.18);
+    font-weight: 700;
+    font-size: 0.74rem;
+    text-transform: uppercase;
+}
+
+.hero-preview .video-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.88rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-preview .video-link::after {
+    content: "↗";
+    font-size: 0.9rem;
+}
+
+.hero-preview .video-link:hover,
+.hero-preview .video-link:focus-visible {
+    transform: translateY(-1px);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
 .hero-preview h2 {
     margin: 0;
-    font-size: 1.4rem;
+    font-size: 1.22rem;
 }
 
 .hero-list {
@@ -325,11 +561,17 @@ a {
 
 .hero-card {
     position: relative;
-    padding: 18px 20px;
+    padding: 16px 18px;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.14);
     border: 1px solid rgba(255, 255, 255, 0.24);
     overflow: hidden;
+}
+
+.hero-card h3 {
+    margin: 0;
+    font-size: 1.08rem;
+    line-height: 1.28;
 }
 
 .hero-card::after {
@@ -357,7 +599,7 @@ a {
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.2);
     font-weight: 700;
-    font-size: 0.8rem;
+    font-size: 0.74rem;
     text-transform: uppercase;
 }
 
@@ -429,10 +671,102 @@ a {
 .intro-deck {
     display: grid;
     gap: 28px;
-    padding: 40px;
+    padding: 36px;
     border-radius: 28px;
     background: var(--paper);
     box-shadow: var(--shadow-1);
+}
+
+.math-purpose {
+    display: grid;
+    gap: 32px;
+    padding: 40px;
+    border-radius: 32px;
+    background: linear-gradient(140deg, rgba(47, 49, 146, 0.12), rgba(255, 217, 102, 0.16));
+    box-shadow: 0 22px 48px rgba(15, 20, 69, 0.16);
+}
+
+.math-purpose header {
+    display: grid;
+    gap: 12px;
+    max-width: 760px;
+}
+
+.purpose-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.purpose-card {
+    position: relative;
+    display: grid;
+    gap: 12px;
+    padding: 30px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(47, 49, 146, 0.14);
+    box-shadow: 0 18px 36px rgba(15, 20, 69, 0.14);
+    overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.purpose-card::after {
+    content: "";
+    position: absolute;
+    inset: auto -120px -140px auto;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(122, 229, 197, 0.24), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.purpose-card h3 {
+    margin: 0;
+    font-size: 1.32rem;
+    line-height: 1.24;
+}
+
+.purpose-card p {
+    margin: 0;
+    font-size: 0.94rem;
+    line-height: 1.52;
+    color: rgba(33, 35, 74, 0.78);
+}
+
+.purpose-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 28px 52px rgba(15, 20, 69, 0.2);
+}
+
+.purpose-card:hover::after {
+    opacity: 1;
+}
+
+.purpose-icon {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.86rem;
+    letter-spacing: 0.4px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(47, 49, 146, 0.12);
+    color: var(--primary);
+    width: fit-content;
+}
+
+.purpose-card ul {
+    margin: 0;
+    padding-left: 20px;
+    display: grid;
+    gap: 6px;
+    color: rgba(33, 35, 74, 0.72);
+    font-size: 0.88rem;
+}
+
+.purpose-card ul li::marker {
+    color: var(--pink);
 }
 
 .intro-deck header {
@@ -461,7 +795,7 @@ a {
 .resource-shelf h2,
 .cta-band h2 {
     margin: 0;
-    font-size: 2.3rem;
+    font-size: 1.92rem;
 }
 
 .intro-deck p,
@@ -502,6 +836,20 @@ a {
     transition: opacity 0.3s ease;
 }
 
+
+.feature-card h3 {
+    margin: 0;
+    font-size: 1.24rem;
+    line-height: 1.28;
+}
+
+.feature-card p {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: rgba(33, 35, 74, 0.74);
+}
+
 .feature-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-2);
@@ -514,7 +862,7 @@ a {
 .grade-gate {
     display: grid;
     gap: 32px;
-    padding: 44px;
+    padding: 40px;
     border-radius: 30px;
     background: linear-gradient(135deg, rgba(47, 49, 146, 0.08), rgba(54, 226, 246, 0.12));
     box-shadow: var(--shadow-1);
@@ -529,14 +877,20 @@ a {
 .grade-card {
     position: relative;
     display: grid;
-    gap: 18px;
-    padding: 32px;
-    border-radius: 26px;
+    gap: 16px;
+    padding: 28px;
+    border-radius: 24px;
     background: rgba(255, 255, 255, 0.92);
     border: 1px solid rgba(47, 49, 146, 0.12);
     box-shadow: 0 18px 34px rgba(15, 20, 69, 0.12);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grade-card p,
+.grade-card ul {
+    font-size: 0.9rem;
+    line-height: 1.5;
 }
 
 .grade-card-glow {
@@ -564,6 +918,12 @@ a {
     opacity: 0.65;
 }
 
+.grade-card h3 {
+    margin: 0;
+    font-size: 1.24rem;
+    line-height: 1.26;
+}
+
 .grade-label {
     display: inline-flex;
     align-items: center;
@@ -574,7 +934,7 @@ a {
     color: var(--primary);
     font-weight: 800;
     text-transform: uppercase;
-    font-size: 0.78rem;
+    font-size: 0.74rem;
 }
 
 .grade-card ul {
@@ -582,8 +942,8 @@ a {
     padding-left: 20px;
     display: grid;
     gap: 8px;
-    color: rgba(33, 35, 74, 0.76);
-    line-height: 1.55;
+    color: rgba(33, 35, 74, 0.72);
+    line-height: 1.48;
 }
 
 .grade-card ul li::marker {
@@ -599,7 +959,7 @@ a {
 .experience {
     display: grid;
     gap: 36px;
-    padding: 44px;
+    padding: 40px;
     border-radius: 32px;
     background: var(--paper);
     box-shadow: var(--shadow-1);
@@ -613,8 +973,8 @@ a {
 
 .experience-card {
     position: relative;
-    padding: 26px;
-    border-radius: 22px;
+    padding: 24px;
+    border-radius: 20px;
     background: linear-gradient(160deg, rgba(54, 226, 246, 0.16), rgba(122, 229, 197, 0.16));
     border: 1px solid rgba(47, 49, 146, 0.16);
     overflow: hidden;
@@ -626,13 +986,42 @@ a {
     box-shadow: 0 22px 36px rgba(15, 20, 69, 0.18);
 }
 
+.experience-card::after {
+    content: "";
+    position: absolute;
+    inset: auto -120px -140px auto;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 217, 102, 0.26), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.experience-card:hover::after {
+    opacity: 0.9;
+}
+
 .experience-card .stage {
     position: absolute;
     top: 16px;
     right: 18px;
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 900;
     color: rgba(47, 49, 146, 0.12);
+}
+
+.experience-card h3 {
+    margin: 0;
+    font-size: 1.12rem;
+    line-height: 1.28;
+}
+
+.experience-card p {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: rgba(33, 35, 74, 0.75);
 }
 
 .experience-panels {
@@ -644,8 +1033,8 @@ a {
 .panel {
     position: relative;
     display: grid;
-    gap: 16px;
-    padding: 28px;
+    gap: 14px;
+    padding: 26px;
     border-radius: 24px;
     background: rgba(255, 255, 255, 0.92);
     border: 1px solid rgba(47, 49, 146, 0.12);
@@ -673,12 +1062,19 @@ a {
     gap: 8px;
 }
 
+.panel header h3 {
+    margin: 0;
+    font-size: 1.18rem;
+    line-height: 1.26;
+}
+
 .panel ol {
     margin: 0;
     padding-left: 20px;
     display: grid;
-    gap: 10px;
-    color: rgba(33, 35, 74, 0.78);
+    gap: 8px;
+    color: rgba(33, 35, 74, 0.74);
+    font-size: 0.9rem;
 }
 
 .panel-link {
@@ -698,10 +1094,18 @@ a {
     color: var(--pink);
 }
 
+.hero-equations span,
+.purpose-card,
+.experience-card,
+.grade-card,
+.resource-card {
+    will-change: transform;
+}
+
 .resource-shelf {
     display: grid;
     gap: 32px;
-    padding: 40px;
+    padding: 36px;
     border-radius: 30px;
     background: rgba(255, 255, 255, 0.94);
     box-shadow: var(--shadow-1);
@@ -715,7 +1119,7 @@ a {
 
 .resource-card {
     position: relative;
-    padding: 24px;
+    padding: 22px;
     border-radius: 20px;
     background: var(--paper-soft);
     border: 1px solid rgba(47, 49, 146, 0.12);
@@ -723,6 +1127,18 @@ a {
     overflow: hidden;
     display: grid;
     gap: 12px;
+}
+
+.resource-card h3 {
+    margin: 0;
+    font-size: 1.08rem;
+}
+
+.resource-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(33, 35, 74, 0.74);
 }
 
 .resource-card::after {
@@ -754,11 +1170,11 @@ a {
 .cta-band {
     position: relative;
     border-radius: 28px;
-    padding: 42px 44px;
+    padding: 36px 40px;
     background: linear-gradient(135deg, rgba(47, 49, 146, 0.92), rgba(54, 226, 246, 0.9));
     color: #fff;
     display: grid;
-    gap: 28px;
+    gap: 24px;
     align-items: center;
     overflow: hidden;
     box-shadow: var(--shadow-2);
@@ -834,6 +1250,21 @@ a {
     }
 }
 
+@keyframes equationFloat {
+    0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 0.75;
+    }
+    50% {
+        transform: translate3d(4px, -10px, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 0.75;
+    }
+}
+
 @keyframes floatSoft {
     0% {
         transform: translate3d(0, 0, 0);
@@ -884,6 +1315,10 @@ a {
         flex-wrap: wrap;
         width: 100%;
         justify-content: flex-start;
+    }
+
+    .landing-actions .grade-pill {
+        flex: 1 1 180px;
     }
 
     .hero {
@@ -949,6 +1384,7 @@ a {
     .intro-deck,
     .grade-gate,
     .experience,
+    .math-purpose,
     .resource-shelf {
         padding: 32px 24px;
     }
@@ -956,4 +1392,8 @@ a {
     .cta-band {
         padding: 32px 24px;
     }
+}
+
+.reduce-motion .hero-equations span {
+    animation: none;
 }
