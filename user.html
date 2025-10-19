@@ -24,33 +24,78 @@
             <p id="user-streak" class="user-streak"></p>
         </div>
         <!-- Contenido dinámico según tipo de usuario -->
-        <div id="alumno-section" class="stats-section" style="display:none;">
-            <h3>Estadísticas de Cursos</h3>
-            <div class="stats-list">
-                <div class="stat-item">
-                    <span class="stat-course">Matemáticas</span>
-                    <span class="stat-time" id="math-time">0 min</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-course">Ciencias</span>
-                    <span class="stat-time" id="science-time">0 min</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-course">Historia</span>
-                    <span class="stat-time" id="history-time">0 min</span>
-                </div>
+        <section id="student-dashboard" class="learner-dashboard" hidden>
+            <div class="learner-columns">
+                <article class="course-summary">
+                    <span class="course-badge">Ruta destacada</span>
+                    <h3>Matemáticas integradas</h3>
+                    <p>Domina los conceptos clave de álgebra, funciones y modelación con una ruta pensada para estudiantes de nivel medio superior.</p>
+                    <div class="course-meta">
+                        <span class="meta-tag">Álgebra</span>
+                        <span class="meta-tag">Funciones</span>
+                        <span class="meta-tag">Pensamiento lógico</span>
+                    </div>
+                    <div class="course-actions">
+                        <button id="open-math-course" class="primary-action" type="button">Ir al curso</button>
+                        <button id="download-syllabus" class="ghost-action" type="button">Ver syllabus</button>
+                    </div>
+                </article>
+                <aside class="course-progress-card">
+                    <h4>Tu avance global</h4>
+                    <div class="progress-donut" id="math-progress-donut" style="--progress:0;">
+                        <span id="math-progress-percent">0%</span>
+                    </div>
+                    <p class="progress-meta" id="math-progress-badge">0 lecciones completadas</p>
+                    <p class="progress-time" id="math-total-minutes">0 min de práctica</p>
+                    <div class="progress-milestones">
+                        <span id="math-next-milestone">Próximo hito: completa tu primer módulo.</span>
+                    </div>
+                </aside>
             </div>
-            <h3>Progreso Diario</h3>
-            <div style="width:100%;max-width:480px;margin:0 auto;">
-                <canvas id="progressChart" style="width:100%;height:220px;max-height:260px;display:block;"></canvas>
-            </div>
-            <button id="logout-btn" class="logout-btn-standalone">Cerrar sesión</button>
-        </div>
+
+            <section class="module-section">
+                <header>
+                    <h3>Ruta de aprendizaje</h3>
+                    <p>Explora cada módulo y completa las pruebas integradas dentro del curso.</p>
+                </header>
+                <div class="module-list" id="module-list"></div>
+            </section>
+
+            <section class="course-assessments">
+                <header>
+                    <h3>Evaluaciones dentro del curso</h3>
+                    <p>Diagnósticos y retos graduados según tu avance actual.</p>
+                </header>
+                <div class="assessment-grid" id="assessment-grid"></div>
+            </section>
+
+            <section class="course-insights">
+                <article class="insights-card">
+                    <header>
+                        <h3>Tu práctica semanal</h3>
+                        <span class="insights-badge">Últimos 7 días</span>
+                    </header>
+                    <div class="chart-frame">
+                        <canvas id="progressChart"></canvas>
+                        <div id="progress-placeholder" class="chart-placeholder" hidden>Aún no hay datos de progreso.</div>
+                    </div>
+                </article>
+                <aside class="resources-card">
+                    <h3>Recursos recomendados</h3>
+                    <ul id="resource-list">
+                        <li><a href="https://www.khanacademy.org/math" target="_blank" rel="noopener">Khan Academy · Álgebra intermedia</a></li>
+                        <li><a href="https://www.geogebra.org/calculator" target="_blank" rel="noopener">GeoGebra · Calculadora gráfica</a></li>
+                        <li><a href="math-grado10.html#recursos">Guía PDF: funciones y gráficos</a></li>
+                    </ul>
+                    <button id="logout-btn" class="logout-btn-standalone" type="button">Cerrar sesión</button>
+                </aside>
+            </section>
+        </section>
         <div id="profesor-section" class="profesor-section" style="display:none;">
             <h3>Panel de Profesor</h3>
             <p>Accede a tu curso para gestionar tus contenidos:</p>
-            <button id="go-curso-btn" class="go-curso-btn">Ir a mi curso</button>
-            <button id="logout-btn-prof" class="logout-btn-standalone">Cerrar sesión</button>
+            <button id="go-curso-btn" class="go-curso-btn" type="button">Ir a mi curso</button>
+            <button id="logout-btn-prof" class="logout-btn-standalone" type="button">Cerrar sesión</button>
             <div id="logout-message-prof" class="logout-message" style="display:none;">Cerrando sesión... Serás redirigido al inicio.</div>
         </div>
     </div>

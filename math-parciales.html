@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descomposición en Fracciones Parciales | WikiLabs</title>
+    <link rel="stylesheet" href="css/style12.css">
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <a href="math-grado10.html" class="breadcrumb" aria-label="Volver a Matemáticas 10°">
+                <img src="DCIM/LOGOS/LOGO WIKILABS (700 x 300 px).png" class="logo" alt="WikiLabs">
+                Volver a grado 10°
+            </a>
+            <div class="header-links">
+                <a href="math-grado10.html#temas">Mapa de temáticas</a>
+                <a href="math-fracciones-complejas.html">Tema anterior</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="topic-page">
+        <section class="topic-hero reveal-on-scroll">
+            <div class="hero-grid">
+                <span class="breadcrumb">Matemáticas · Técnica avanzada</span>
+                <h1>Descomposición en fracciones parciales</h1>
+                <p>Transforma fracciones impropias en sumas de fracciones simples para facilitar integrales, ecuaciones diferenciales o modelos aplicados.</p>
+                <div class="hero-badges">
+                    <span class="hero-badge">Asistente paso a paso</span>
+                    <span class="hero-badge">Calculadora simbólica</span>
+                    <span class="hero-badge">Tiempo estimado: 40 min</span>
+                </div>
+                <div class="hero-actions">
+                    <a class="cta-primary" href="#parciales">Iniciar descomposición</a>
+                    <a class="cta-secondary" href="math-aplicaciones.html">Aplicaciones →</a>
+                </div>
+            </div>
+            <div class="hero-sparkles" aria-hidden="true">
+                <span>A/(x-a)</span>
+                <span>(Bx+C)</span>
+                <span>coeficientes</span>
+                <span>deg P &lt; deg Q</span>
+                <span>∫ racional</span>
+                <span>x ≠ r</span>
+            </div>
+        </section>
+
+        <section class="topic-section reveal-on-scroll" id="parciales">
+            <div class="section-intro">
+                <span class="section-tag">Metodología</span>
+                <h2>Paso a paso para descomponer</h2>
+                <p>Utiliza este marco para convertir fracciones impropias en sumas manejables.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-step">
+                    <span>1. Verificar grados</span>
+                    <p>Si el grado del numerador es mayor o igual al del denominador, realiza división de polinomios para obtener una fracción propia.</p>
+                </div>
+                <div class="timeline-step">
+                    <span>2. Factorizar el denominador</span>
+                    <p>Expresa <span class="math-inline">Q(x)</span> como producto de factores lineales y/o irreducibles.</p>
+                </div>
+                <div class="timeline-step">
+                    <span>3. Plantear suma de fracciones simples</span>
+                    <p>Asigna coeficientes a determinars: <span class="math-inline">A/(x - r)</span>, <span class="math-inline">(Bx + C)/(x^2 + px + q)</span>, etc.</p>
+                </div>
+                <div class="timeline-step">
+                    <span>4. Resolver coeficientes</span>
+                    <p>Iguala numeradores o evalúa valores estratégicos para hallar los coeficientes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-section soft reveal-on-scroll" id="parciales-ejemplos">
+            <div class="section-intro">
+                <span class="section-tag">Ejemplos guiados</span>
+                <h2>Casos representativos</h2>
+            </div>
+            <div class="concept-grid">
+                <article class="concept-card">
+                    <h3>Factores lineales distintos</h3>
+                    <ul>
+                        <li><span class="math-inline">3x/(x^2 - 1)</span> &rarr; <span class="math-inline">A/(x - 1) + B/(x + 1)</span>.</li>
+                        <li>Resultado: <span class="math-inline">(3/2)/(x - 1) + (3/2)/(x + 1)</span>.</li>
+                    </ul>
+                </article>
+                <article class="concept-card">
+                    <h3>Factores cuadráticos</h3>
+                    <ul>
+                        <li><span class="math-inline">(2x^2 + 5x + 7)/[(x + 2)(x^2 + 1)]</span>.</li>
+                        <li>Plantea: <span class="math-inline">A/(x + 2) + (Bx + C)/(x^2 + 1)</span>.</li>
+                    </ul>
+                </article>
+                <article class="concept-card">
+                    <h3>Factores repetidos</h3>
+                    <ul>
+                        <li><span class="math-inline">5/(x - 1)^2</span> &rarr; <span class="math-inline">A/(x - 1) + B/(x - 1)^2</span>.</li>
+                        <li>Recuerda incluir términos para cada potencia del factor repetido.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="topic-section media-section reveal-on-scroll" id="parciales-videos">
+            <div class="section-intro">
+                <span class="section-tag">Videos recomendados</span>
+                <h2>Descompón con apoyo visual</h2>
+                <p>Refuerza la técnica con videos que muestran cómo plantear y resolver sistemas de coeficientes para cada tipo de denominador.</p>
+            </div>
+            <div class="media-grid">
+                <article class="media-card">
+                    <div class="media-thumb">
+                        <iframe src="https://www.youtube.com/embed/gOQLbTjaCjM" title="Fracciones parciales (Julioprofe)" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                    <div class="media-body">
+                        <h3>Introducción y casos básicos</h3>
+                        <p>Julioprofe explica la técnica para factores lineales distintos y repetidos.</p>
+                        <a class="media-link" href="https://www.youtube.com/watch?v=gOQLbTjaCjM" target="_blank" rel="noopener">Ver el tutorial</a>
+                    </div>
+                </article>
+                <article class="media-card">
+                    <div class="media-thumb">
+                        <iframe src="https://www.youtube.com/embed/K76HBtPTNmo" title="Preparación para fracciones parciales" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                    <div class="media-body">
+                        <h3>Factoriza antes de descomponer</h3>
+                        <p>Refuerza la factorización y simplificación previa para que la descomposición sea directa.</p>
+                        <a class="media-link" href="https://www.youtube.com/watch?v=K76HBtPTNmo" target="_blank" rel="noopener">Repasar factorización</a>
+                    </div>
+                </article>
+                <article class="media-card">
+                    <div class="media-thumb">
+                        <iframe src="https://www.youtube.com/embed/Wn15ZaJiUq4" title="Ejercicios guiados de fracciones" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                    <div class="media-body">
+                        <h3>Practica sistemas de coeficientes</h3>
+                        <p>Observa cómo se resuelven coeficientes comparando numeradores y evaluando valores estratégicos.</p>
+                        <a class="media-link" href="https://www.youtube.com/watch?v=Wn15ZaJiUq4" target="_blank" rel="noopener">Resolver ejercicios</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="topic-section reveal-on-scroll" id="parciales-interactivo">
+            <div class="section-intro">
+                <span class="section-tag">Interactividad</span>
+                <h2>Verifica tus coeficientes</h2>
+            </div>
+            <div class="question-stack">
+                <article class="question-card choice-question" data-correct="a">
+                    <h3>¿Qué forma parcial corresponde a <span class="math-inline">(4x + 5)/(x^2 + 3x)</span>?</h3>
+                    <div class="options-grid">
+                        <button type="button" class="option-btn" data-option="a"><span class="math-inline">A/x + B/(x + 3)</span></button>
+                        <button type="button" class="option-btn" data-option="b"><span class="math-inline">(Ax + B)/(x^2 + 3x)</span></button>
+                        <button type="button" class="option-btn" data-option="c"><span class="math-inline">A/x^2 + B/(x + 3)^2</span></button>
+                        <button type="button" class="option-btn" data-option="d"><span class="math-inline">A/(x^2 + 3x)</span></button>
+                    </div>
+                    <p class="question-feedback" aria-live="polite"></p>
+                </article>
+
+                <article class="question-card multi-select-question" data-correct="a,c">
+                    <h3>¿Cuándo conviene usar fracciones parciales?</h3>
+                    <p>Selecciona todos los escenarios donde la técnica facilita el cálculo.</p>
+                    <div class="options-grid">
+                        <button type="button" class="option-btn" data-option="a">Integrar una función racional con denominador factorizable</button>
+                        <button type="button" class="option-btn" data-option="b">Resolver una suma de números enteros pequeños</button>
+                        <button type="button" class="option-btn" data-option="c">Invertir una transformada de Laplace con polinomios</button>
+                        <button type="button" class="option-btn" data-option="d">Calcular la media aritmética de un conjunto de datos</button>
+                    </div>
+                    <button type="button" class="check-answer">Analizar escenarios</button>
+                    <p class="question-feedback" aria-live="polite"></p>
+                </article>
+
+                <article class="question-card match-question" data-question="parciales-coeficientes">
+                    <h3>Empareja la expresión con su sistema de coeficientes</h3>
+                    <div class="match-board">
+                        <div class="match-bank">
+                            <button type="button" class="match-option" data-answer="sistema1">Resolver A y B con sustitución en <span class="math-inline">x = ±1</span></button>
+                            <button type="button" class="match-option" data-answer="sistema2">Igualar coeficientes tras expandir</button>
+                            <button type="button" class="match-option" data-answer="sistema3">Resolver A, B y C evaluando valores especiales</button>
+                            <button type="button" class="match-option" data-answer="sistema4">Derivar para obtener coeficiente adicional</button>
+                        </div>
+                        <div class="match-pairs">
+                            <div class="match-pair">
+                                <span class="match-label math-inline">3x/(x^2 - 1)</span>
+                                <div class="match-slot" data-accept="sistema1">Suelta aquí</div>
+                            </div>
+                            <div class="match-pair">
+                                <span class="match-label math-inline">5/(x - 1)^2</span>
+                                <div class="match-slot" data-accept="sistema4">Suelta aquí</div>
+                            </div>
+                            <div class="match-pair">
+                                <span class="match-label math-inline">(2x^2 + 5x + 7)/[(x + 2)(x^2 + 1)]</span>
+                                <div class="match-slot" data-accept="sistema3">Suelta aquí</div>
+                            </div>
+                            <div class="match-pair">
+                                <span class="match-label math-inline">(4x + 5)/(x^2 + 3x)</span>
+                                <div class="match-slot" data-accept="sistema2">Suelta aquí</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="check-answer">Comprobar coeficientes</button>
+                    <p class="question-feedback" aria-live="polite"></p>
+                </article>
+            </div>
+        </section>
+
+        <section class="topic-section soft reveal-on-scroll" id="parciales-herramientas">
+            <div class="section-intro">
+                <span class="section-tag">Recursos</span>
+                <h2>Herramientas recomendadas</h2>
+            </div>
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <strong>Calculadora simbólica</strong>
+                    <a href="https://www.wolframalpha.com/" target="_blank" rel="noopener">Verifica tus resultados</a>
+                </div>
+                <div class="resource-card">
+                    <strong>Khan Academy: fracciones parciales</strong>
+                    <p>Vídeos y ejercicios para practicar distintos tipos de denominadores.</p>
+                    <a href="https://es.khanacademy.org/math/algebra-home/alg-rational-expr-eq/alg-partial-fraction-decomposition/v/partial-fraction-expansion-1" target="_blank" rel="noopener">Ir al recurso</a>
+                </div>
+                <div class="resource-card">
+                    <strong>GeoGebra CAS</strong>
+                    <p>Resuelve sistemas de coeficientes y comprueba tus fracciones parciales con pasos detallados.</p>
+                    <a href="https://www.geogebra.org/cas" target="_blank" rel="noopener">Abrir CAS en línea</a>
+                </div>
+            </div>
+        </section>
+
+        <nav class="page-nav reveal-on-scroll">
+            <a href="math-fracciones-complejas.html">← Fracciones complejas</a>
+            <a href="math-aplicaciones.html">Aplicaciones reales →</a>
+        </nav>
+    </main>
+
+    <script src="js/script12.js"></script>
+</body>
+</html>

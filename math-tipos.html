@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Fracciones Algebraicas | WikiLabs</title>
+    <link rel="stylesheet" href="css/style12.css">
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <a href="math-grado10.html" class="breadcrumb" aria-label="Volver a Matemáticas 10°">
+                <img src="DCIM/LOGOS/LOGO WIKILABS (700 x 300 px).png" class="logo" alt="WikiLabs">
+                Volver a grado 10°
+            </a>
+            <div class="header-links">
+                <a href="math-grado10.html#temas">Mapa de temáticas</a>
+                <a href="math-fundamentos.html">Tema anterior</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="topic-page">
+        <section class="topic-hero reveal-on-scroll">
+            <div class="hero-grid">
+                <span class="breadcrumb">Matemáticas · Clasificación</span>
+                <h1>Tipos de fracciones algebraicas</h1>
+                <p>Distingue cuándo una fracción es propia, impropia, aparente o compleja con una galería animada de ejemplos y retos para clasificar expresiones reales.</p>
+                <div class="hero-badges">
+                    <span class="hero-badge">Comparador interactivo</span>
+                    <span class="hero-badge">Laboratorio de clasificación</span>
+                    <span class="hero-badge">Tiempo estimado: 30 min</span>
+                </div>
+                <div class="hero-actions">
+                    <a class="cta-primary" href="#galeria-clasificacion">Explorar tipologías</a>
+                    <a class="cta-secondary" href="math-dominio.html">Valores prohibidos →</a>
+                </div>
+            </div>
+            <div class="hero-sparkles" aria-hidden="true">
+                <span>deg P(x)</span>
+                <span>&lt; deg Q(x)</span>
+                <span>x³/(x²+1)</span>
+                <span>propia ⇔</span>
+                <span>impropia ≥</span>
+                <span>√ expresiones</span>
+            </div>
+        </section>
+
+        <section class="topic-section reveal-on-scroll" id="galeria-clasificacion">
+            <div class="section-intro">
+                <span class="section-tag">Galería guiada</span>
+                <h2>Clasifica a partir del grado de cada polinomio</h2>
+                <p>Observa cómo varía el comportamiento al comparar los grados de numerador y denominador, y descubre indicios visuales para detectar la categoría correcta.</p>
+            </div>
+            <div class="concept-grid">
+                <article class="concept-card">
+                    <h3>Fracciones propias</h3>
+                    <ul>
+                        <li>El grado del numerador es menor que el del denominador: <span class="math-inline">(x + 1)/(x^2 + 4)</span>.</li>
+                        <li>Su valor absoluto es menor que 1 cerca del infinito.</li>
+                        <li>Son ideales para modelar tasas decrecientes o amortiguadas.</li>
+                    </ul>
+                </article>
+                <article class="concept-card">
+                    <h3>Fracciones impropias</h3>
+                    <ul>
+                        <li>El grado del numerador es igual o mayor al del denominador.</li>
+                        <li>Se pueden reescribir como polinomio + fracción propia mediante división sintética.</li>
+                        <li>Practica con <span class="math-inline">(x^2 + 2x + 1)/(x + 1)</span> y realiza la división para descubrir su parte polinómica.</li>
+                    </ul>
+                </article>
+                <article class="concept-card">
+                    <h3>Aparentes y complejas</h3>
+                    <ul>
+                        <li>Aparente: el denominador divide exactamente al numerador y la expresión se simplifica a un polinomio.</li>
+                        <li>Compleja: contiene otras fracciones en numerador, denominador o ambos.</li>
+                        <li>Requieren especial cuidado con las restricciones al simplificar.</li>
+                    </ul>
+                </article>
+            </div>
+            <figure class="concept-figure">
+                <svg viewBox="0 0 600 260" role="img" aria-labelledby="tipos-fig-title tipos-fig-desc" xmlns="http://www.w3.org/2000/svg">
+                    <title id="tipos-fig-title">Mapa de fracciones propias e impropias</title>
+                    <desc id="tipos-fig-desc">Diagrama comparativo que relaciona los grados de numerador y denominador con el tipo de fracción.</desc>
+                    <defs>
+                        <linearGradient id="tipos-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#7ae5c5" stop-opacity="0.35" />
+                            <stop offset="100%" stop-color="#ff61a6" stop-opacity="0.35" />
+                        </linearGradient>
+                    </defs>
+                    <rect x="0" y="0" width="600" height="260" rx="22" fill="url(#tipos-gradient)" opacity="0.5" />
+                    <g transform="translate(60,40)" fill="none" stroke="#1f224a" stroke-width="1.4">
+                        <rect x="0" y="0" width="210" height="160" rx="18" fill="rgba(255,255,255,0.8)" />
+                        <rect x="240" y="0" width="210" height="160" rx="18" fill="rgba(255,255,255,0.8)" />
+                        <text x="30" y="32" font-size="18" fill="#2f3192">Propia</text>
+                        <text x="270" y="32" font-size="18" fill="#2f3192">Impropia</text>
+                        <g stroke="#36e2f6" stroke-width="3">
+                            <path d="M30,90 Q70,10 150,60" />
+                            <path d="M270,110 Q330,30 420,70" />
+                        </g>
+                        <text x="18" y="120" font-size="13" fill="#1f224a">deg P(x) &lt; deg Q(x)</text>
+                        <text x="258" y="120" font-size="13" fill="#1f224a">deg P(x) ≥ deg Q(x)</text>
+                        <text x="30" y="140" font-size="13" fill="#ff61a6">Se aproxima a 0</text>
+                        <text x="270" y="140" font-size="13" fill="#ff61a6">Puede crecer sin límite</text>
+                    </g>
+                </svg>
+                <figcaption>Ilustración propia para recordar el criterio de grados antes de clasificar.</figcaption>
+            </figure>
+        </section>
+
+        <section class="topic-section soft reveal-on-scroll" id="comparador-tipos">
+            <div class="section-intro">
+                <span class="section-tag">Visualizador</span>
+                <h2>Comparador de comportamiento</h2>
+                <p>Utiliza estas referencias para anticipar cómo se comporta cada categoría a medida que <span class="math-inline">x</span> crece o tiende a valores críticos.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-step">
+                    <span>Propia</span>
+                    <p>Tiende a 0 cuando <span class="math-inline">|x| → ∞</span>. Ideal para describir sistemas que se estabilizan.</p>
+                </div>
+                <div class="timeline-step">
+                    <span>Impropia</span>
+                    <p>Puede divergir o estabilizarse dependiendo de factores ocultos; se recomienda dividir los polinomios para leerla con claridad.</p>
+                </div>
+                <div class="timeline-step">
+                    <span>Aparente</span>
+                    <p>Se simplifica completamente, pero conserva las restricciones originales. Úsala para detectar oportunidades de reducción.</p>
+                </div>
+                <div class="timeline-step">
+                    <span>Compleja</span>
+                    <p>Transforma expresiones anidadas en fracciones comunes mediante el truco de multiplicar por el inverso adecuado.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-section media-section reveal-on-scroll" id="tipos-videos">
+            <div class="section-intro">
+                <span class="section-tag">Videos sugeridos</span>
+                <h2>Clasifica con ejemplos guiados</h2>
+                <p>Revisa casos reales y procesos de simplificación que muestran cómo reconocer el tipo de una fracción algebraica sin perder las restricciones.</p>
+            </div>
+            <div class="media-grid">
+                <article class="media-card">
+                    <div class="media-thumb">
+                        <iframe src="https://www.youtube.com/embed/K76HBtPTNmo" title="Clasificación y operaciones con fracciones algebraicas" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                    <div class="media-body">
+                        <h3>Clasifica antes de operar</h3>
+                        <p>Aprende a distinguir fracciones propias, impropias y aparentes antes de realizar cualquier operación.</p>
+                        <a class="media-link" href="https://www.youtube.com/watch?v=K76HBtPTNmo" target="_blank" rel="noopener">Ver la explicación</a>
+                    </div>
+                </article>
+                <article class="media-card">
+                    <div class="media-thumb">
+                        <iframe src="https://www.youtube.com/embed/Wn15ZaJiUq4" title="Ejercicios resueltos de clasificación" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                    <div class="media-body">
+                        <h3>Ejercicios guiados</h3>
+                        <p>Resuelve expresiones paso a paso para justificar por qué pertenecen a cada categoría.</p>
+                        <a class="media-link" href="https://www.youtube.com/watch?v=Wn15ZaJiUq4" target="_blank" rel="noopener">Practicar con ejemplos</a>
+                    </div>
+                </article>
+                <article class="media-card">
+                    <div class="media-thumb">
+                        <iframe src="https://www.youtube.com/embed/AZd4sJFhyt8" title="Fundamentos de fracciones algebraicas" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                    <div class="media-body">
+                        <h3>Refuerza la base teórica</h3>
+                        <p>Repasa la estructura general para detectar rápidamente si una expresión se simplifica a un caso aparente.</p>
+                        <a class="media-link" href="https://www.youtube.com/watch?v=AZd4sJFhyt8" target="_blank" rel="noopener">Volver a los fundamentos</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="topic-section reveal-on-scroll" id="laboratorio-tipos">
+            <div class="section-intro">
+                <span class="section-tag">Laboratorio interactivo</span>
+                <h2>Clasifica y justifica tus decisiones</h2>
+                <p>Evalúa las expresiones y explica por qué pertenecen a cierto grupo. Las actividades combinan selección múltiple y emparejamientos para consolidar el aprendizaje.</p>
+            </div>
+            <div class="question-stack" data-random-count="3">
+                <article class="question-card choice-question" data-correct="c">
+                    <h3>Selecciona la fracción impropia</h3>
+                    <div class="options-grid">
+                        <button type="button" class="option-btn" data-option="a"><span class="math-inline">(x + 4)/(x^2 + 3)</span></button>
+                        <button type="button" class="option-btn" data-option="b"><span class="math-inline">2x/(x^3 - 1)</span></button>
+                        <button type="button" class="option-btn" data-option="c"><span class="math-inline">(x^3 - x)/(x^2 + 1)</span></button>
+                        <button type="button" class="option-btn" data-option="d"><span class="math-inline">3/(x^2 + 5x)</span></button>
+                    </div>
+                    <p class="question-feedback" aria-live="polite"></p>
+                </article>
+
+                <article class="question-card multi-select-question" data-correct="a,d">
+                    <h3>Elige todas las fracciones propias</h3>
+                    <p>Marca las expresiones cuyo numerador tiene grado menor que el denominador.</p>
+                    <div class="options-grid">
+                        <button type="button" class="option-btn" data-option="a"><span class="math-inline">(2x + 5)/(x^2 + 3)</span></button>
+                        <button type="button" class="option-btn" data-option="b"><span class="math-inline">(x^3 + 1)/(x + 2)</span></button>
+                        <button type="button" class="option-btn" data-option="c"><span class="math-inline">(x^2 + 4)/(x^2 - 9)</span></button>
+                        <button type="button" class="option-btn" data-option="d"><span class="math-inline">(5x - 1)/(x^2 + x + 6)</span></button>
+                    </div>
+                    <button type="button" class="check-answer">Evaluar selección</button>
+                    <p class="question-feedback" aria-live="polite"></p>
+                </article>
+
+                <article class="question-card match-question" data-question="tipos-clasificacion">
+                    <h3>Arrastra cada expresión a su categoría correcta</h3>
+                    <div class="match-board">
+                        <div class="match-bank">
+                            <button type="button" class="match-option" data-answer="propia"><span class="math-inline">(x + 2)/(x^2 + 5)</span></button>
+                            <button type="button" class="match-option" data-answer="aparente"><span class="math-inline">(x^2 - 4)/(x - 2)</span></button>
+                            <button type="button" class="match-option" data-answer="compleja"><span class="math-inline">(x/(x + 1))/(x - 3)</span></button>
+                            <button type="button" class="match-option" data-answer="impropia"><span class="math-inline">(x^2 + 3x + 2)/(x + 2)</span></button>
+                        </div>
+                        <div class="match-pairs">
+                            <div class="match-pair">
+                                <span class="match-label">Propia</span>
+                                <div class="match-slot" data-accept="propia">Suelta aquí</div>
+                            </div>
+                            <div class="match-pair">
+                                <span class="match-label">Impropia</span>
+                                <div class="match-slot" data-accept="impropia">Suelta aquí</div>
+                            </div>
+                            <div class="match-pair">
+                                <span class="match-label">Aparente</span>
+                                <div class="match-slot" data-accept="aparente">Suelta aquí</div>
+                            </div>
+                            <div class="match-pair">
+                                <span class="match-label">Compleja</span>
+                                <div class="match-slot" data-accept="compleja">Suelta aquí</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="check-answer">Comprobar clasificación</button>
+                    <p class="question-feedback" aria-live="polite"></p>
+                </article>
+
+                <article class="question-card choice-question" data-correct="b">
+                    <h3>¿Qué rasgo revela que una fracción es aparente?</h3>
+                    <div class="options-grid">
+                        <button type="button" class="option-btn" data-option="a">El numerador tiene grado menor que el denominador</button>
+                        <button type="button" class="option-btn" data-option="b">Tras factorizar, numerador y denominador comparten un factor que se cancela por completo</button>
+                        <button type="button" class="option-btn" data-option="c">Incluye radicales en el numerador</button>
+                        <button type="button" class="option-btn" data-option="d">No existen restricciones en el dominio</button>
+                    </div>
+                    <p class="question-feedback" aria-live="polite"></p>
+                </article>
+
+                <article class="question-card input-question" data-answer="propia|fraccionpropia|propias">
+                    <h3>Analiza la expresión <span class="math-inline">(4x + 1)/(x^2 + 5)</span></h3>
+                    <p>Escribe el tipo de fracción al que pertenece según el criterio de grados.</p>
+                    <div class="input-wrapper">
+                        <label for="tipos-clasificacion-input">Tipo de fracción</label>
+                        <input id="tipos-clasificacion-input" type="text" class="answer-input" placeholder="Ejemplo: propia, impropia...">
+                        <button type="button" class="check-answer">Validar</button>
+                    </div>
+                    <p class="question-feedback" aria-live="polite"></p>
+                </article>
+            </div>
+        </section>
+
+        <section class="topic-section soft reveal-on-scroll" id="tipos-notas">
+            <div class="section-intro">
+                <span class="section-tag">Notas clave</span>
+                <h2>Consejos rápidos para clasificar sin errores</h2>
+            </div>
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <strong>1. Compara grados primero</strong>
+                    <p>Es la técnica más veloz para distinguir fracciones propias e impropias.</p>
+                    <a href="https://es.khanacademy.org/math/algebra-home/alg-rational-expr-eq/alg-review-rational/a/identifying-the-type-of-rational-expression" target="_blank" rel="noopener">Refuerzo Khan Academy</a>
+                </div>
+                <div class="resource-card">
+                    <strong>2. Simplifica antes de decidir</strong>
+                    <p>Un caso aparente solo se detecta si factorizas y cancelas correctamente.</p>
+                    <a href="https://www.symbolab.com/solver/rational-expression-calculator" target="_blank" rel="noopener">Comprobar con Symbolab</a>
+                </div>
+                <div class="resource-card">
+                    <strong>3. Conecta con el contexto</strong>
+                    <p>Si el fenómeno crece sin límites, quizá estés frente a una fracción impropia.</p>
+                    <a href="https://www.desmos.com/calculator?lang=es" target="_blank" rel="noopener">Visualizar en Desmos</a>
+                </div>
+            </div>
+        </section>
+
+        <nav class="page-nav reveal-on-scroll">
+            <a href="math-fundamentos.html">← Fundamentos</a>
+            <a href="math-dominio.html">Dominio y restricciones →</a>
+        </nav>
+    </main>
+
+    <script src="js/script12.js"></script>
+</body>
+</html>

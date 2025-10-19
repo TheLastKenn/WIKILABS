@@ -3,316 +3,759 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fracciones Algebraicas | WikiLabs</title>
+    <title>Ruta de Matemáticas | WikiLabs</title>
     <link rel="stylesheet" href="css/style6.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <div class="header">
-        <nav class="header-menu">  
-            <img src="DCIM/LOGOS/WIKILABS-WHITE.png" class="logo">
-            <ul>
+    <header class="header">
+        <nav class="header-menu">
+            <img src="DCIM/LOGOS/WIKILABS-WHITE.png" class="logo" alt="WikiLabs">
+            <ul class="nav">
                 <li class="nav-menu-item"><a href="cursos.html" class="nav-menu-link">Cursos</a></li>
                 <li class="nav-menu-item"><a href="contact.html" class="nav-menu-link">Contáctanos</a></li>
             </ul>
-        </nav>  
-    </div>
-    <div id="profesor-panel-math" class="profesor-panel-math" style="display:none;">
-        <button id="toggle-menu-btn" class="toggle-menu-btn">+ Añadir/Editar Contenido</button>
-        <div id="menu-contenido" class="menu-contenido">
-            <form id="contenido-form">
-                <label for="titulo-contenido">Título</label>
-                <input type="text" id="titulo-contenido" required>
+        </nav>
+    </header>
 
-                <label for="titulo-font">Fuente del título</label>
-                <select id="titulo-font">
-                    <option value="Montserrat">Montserrat</option>
-                    <option value="Roboto">Roboto</option>
-                    <option value="Arial">Arial</option>
-                    <option value="Courier New">Courier New</option>
-                </select>
-                <label for="titulo-size">Tamaño del título</label>
-                <input type="number" id="titulo-size" min="14" max="48" value="22">
-
-                <label for="texto-contenido">Texto</label>
-                <textarea id="texto-contenido" required></textarea>
-
-                <label for="texto-font">Fuente del texto</label>
-                <select id="texto-font">
-                    <option value="Montserrat">Montserrat</option>
-                    <option value="Roboto">Roboto</option>
-                    <option value="Arial">Arial</option>
-                    <option value="Courier New">Courier New</option>
-                </select>
-                <label for="texto-size">Tamaño del texto</label>
-                <input type="number" id="texto-size" min="12" max="36" value="16">
-
-                <label for="media-type">Agregar:</label>
-                <select id="media-type">
-                    <option value="">Ninguno</option>
-                    <option value="imagen">Imagen</option>
-                    <option value="video">Video</option>
-                    <option value="grafica">Gráfica (embed/URL)</option>
-                </select>
-                <!-- Campo para URL o embed -->
-                <input type="text" id="media-url" placeholder="URL o código embed" style="display:none;">
-                <!-- Campo para archivo local -->
-                <input type="file" id="media-file" accept="image/*,video/*" style="display:none;">
-                <!-- Tamaño de imagen/video -->
-                <div id="media-size-fields" style="display:none; gap:8px; margin-bottom:10px;">
-                    <label for="media-width" style="margin-right:4px;">Ancho (px):</label>
-                    <input type="number" id="media-width" min="50" max="1200" value="480" style="width:80px;">
-                    <label for="media-height" style="margin-right:4px;">Alto (px):</label>
-                    <input type="number" id="media-height" min="50" max="900" value="320" style="width:80px;">
-                </div>
-
-                <button type="submit" class="add-content-btn">Guardar contenido</button>
-                <button type="button" id="cancel-edit-btn" style="display:none;">Cancelar edición</button>
-            </form>
-        </div>
-        <div id="contenidos-math" class="contenidos-math"></div>
-    </div>
-    <div class="math-container depth-animate">
-        <h1 class="math-title">Fracciones Algebraicas</h1>
-        <p class="math-slogan">Todo lo que necesitas saber sobre fracciones algebraicas y sus operaciones.</p>
-
-        <!-- Introducción -->
-        <section class="math-section fade-in">
-            <h2>¿Qué es una fracción algebraica?</h2>
-            <p>
-                Una <b>fracción algebraica</b> es una expresión de la forma <span class="ejemplo-math-exp">P(x)/Q(x)</span>, donde P(x) y Q(x) son polinomios y Q(x) ≠ 0.<br>
-                Es decir, es como una fracción común, pero en vez de números, puede tener letras (variables) y operaciones algebraicas.
-            </p>
-            <ul>
-                <li><b>Numerador:</b> Polinomio que está arriba de la fracción.</li>
-                <li><b>Denominador:</b> Polinomio que está abajo de la fracción y nunca puede ser cero.</li>
-            </ul>
-            <p>
-                Las fracciones algebraicas aparecen en muchos problemas de álgebra, cálculo y ciencias aplicadas, ya que permiten expresar relaciones entre polinomios y resolver ecuaciones complejas.
-            </p>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Algebraic_fraction_example.svg/400px-Algebraic_fraction_example.svg.png" alt="Ejemplo de fracción algebraica" style="max-width:340px;display:block;margin:18px auto 0 auto;border-radius:10px;">
-        </section>
-
-        <!-- Tipos de fracciones algebraicas -->
-        <section class="math-section fade-in">
-            <h2>Tipos de fracciones algebraicas</h2>
-            <ul>
-                <li><b>Propias:</b> El grado del numerador es menor que el del denominador.<br>
-                    Ejemplo: <span class="ejemplo-math-exp">(x + 1)/(x² + 3)</span>
-                </li>
-                <li><b>Impropias:</b> El grado del numerador es igual o mayor que el del denominador.<br>
-                    Ejemplo: <span class="ejemplo-math-exp">(x² + 2x + 1)/(x + 1)</span>
-                </li>
-                <li><b>Fracción aparente:</b> El denominador divide exactamente al numerador.<br>
-                    Ejemplo: <span class="ejemplo-math-exp">(x² - 1)/(x - 1)</span> (aquí, x² - 1 = (x - 1)(x + 1))
-                </li>
-                <li><b>Fracciones equivalentes:</b> Dos fracciones algebraicas son equivalentes si representan el mismo valor para todos los valores permitidos de la variable.</li>
-                <li><b>Fracciones complejas:</b> Son aquellas en las que el numerador, el denominador o ambos contienen a su vez fracciones algebraicas.<br>
-                    Ejemplo: <span class="ejemplo-math-exp">\(\frac{\frac{x}{x+1}}{x-2}\)</span>
-                </li>
-            </ul>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Algebraic_fraction_types.svg/400px-Algebraic_fraction_types.svg.png" alt="Tipos de fracciones algebraicas" style="max-width:340px;display:block;margin:18px auto 0 auto;border-radius:10px;">
-        </section>
-
-        <!-- Dominio de una fracción algebraica -->
-        <section class="math-section fade-in">
-            <h2>Dominio de una fracción algebraica</h2>
-            <p>
-                El <b>dominio</b> de una fracción algebraica es el conjunto de valores de la variable para los cuales la fracción está definida. 
-                <br>Recuerda: <b>El denominador nunca puede ser cero</b>.
-            </p>
-            <div class="ejemplo-math">
-                <div class="ejemplo-math-title">Ejemplo: Hallar el dominio de <span class="ejemplo-math-exp">1/(x^2 - 4)</span></div>
-                <div class="ejemplo-math-step"><b>Paso 1:</b> Igualar el denominador a cero: x² - 4 = 0</div>
-                <div class="ejemplo-math-step"><b>Paso 2:</b> Resolver: x² = 4 ⇒ x = 2 o x = -2</div>
-                <div class="ejemplo-math-step"><b>Dominio:</b> Todos los reales excepto x = 2 y x = -2</div>
-            </div>
-            <p>
-                <b>Nota:</b> Si el denominador tiene varios factores, excluye todos los valores que lo hagan cero.
-            </p>
-        </section>
-
-        <!-- Simplificación -->
-        <section class="math-section fade-in">
-            <h2>Simplificación de fracciones algebraicas</h2>
-            <p>
-                Simplificar una fracción algebraica significa reducirla a su mínima expresión, eliminando factores comunes en el numerador y el denominador.
-            </p>
-            <div class="ejemplo-math">
-                <div class="ejemplo-math-title">Ejemplo: Simplificar <span class="ejemplo-math-exp">(x² - 9)/(x² - x - 6)</span></div>
-                <div class="ejemplo-math-step"><b>Paso 1:</b> Factoriza ambos polinomios.<br>
-                    Numerador: x² - 9 = (x - 3)(x + 3)<br>
-                    Denominador: x² - x - 6 = (x - 3)(x + 2)
-                </div>
-                <div class="ejemplo-math-step"><b>Paso 2:</b> Cancela el factor común (x - 3).</div>
-                <div class="ejemplo-math-step"><b>Resultado:</b> <span class="ejemplo-math-exp">(x + 3)/(x + 2)</span></div>
-                <div class="ejemplo-math-step"><b>Nota:</b> El valor x = 3 no está en el dominio original ni en el simplificado.</div>
-            </div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Algebraic_fraction_simplification.svg/400px-Algebraic_fraction_simplification.svg.png" alt="Simplificación de fracciones algebraicas" style="max-width:340px;display:block;margin:18px auto 0 auto;border-radius:10px;">
-        </section>
-
-        <!-- Suma y resta -->
-        <section class="math-section fade-in">
-            <h2>Suma y resta de fracciones algebraicas</h2>
-            <p>
-                Para sumar o restar fracciones algebraicas, es necesario que tengan el mismo denominador. Si no lo tienen, se busca el mínimo común denominador (MCD).
-            </p>
-            <div class="ejemplo-math">
-                <div class="ejemplo-math-title">Ejemplo: <span class="ejemplo-math-exp">1/(x + 2) + 2/(x + 3)</span></div>
-                <div class="ejemplo-math-step"><b>Paso 1:</b> El MCD es (x + 2)(x + 3).</div>
-                <div class="ejemplo-math-step"><b>Paso 2:</b> Expresa ambas fracciones con el MCD:<br>
-                    <span class="ejemplo-math-exp">1/(x + 2) = (x + 3)/[(x + 2)(x + 3)]</span><br>
-                    <span class="ejemplo-math-exp">2/(x + 3) = 2(x + 2)/[(x + 2)(x + 3)]</span>
-                </div>
-                <div class="ejemplo-math-step"><b>Paso 3:</b> Suma los numeradores:<br>
-                    <span class="ejemplo-math-exp">[x + 3 + 2x + 4]/[(x + 2)(x + 3)] = (3x + 7)/[(x + 2)(x + 3)]</span>
-                </div>
-                <div class="ejemplo-math-step"><b>Paso 4:</b> Simplifica si es posible.</div>
-            </div>
-            <div class="ejemplo-math">
-                <div class="ejemplo-math-title">Ejemplo: <span class="ejemplo-math-exp">3/(x - 1) - 2/(x + 2)</span></div>
-                <div class="ejemplo-math-step"><b>Paso 1:</b> El MCD es (x - 1)(x + 2).</div>
-                <div class="ejemplo-math-step"><b>Paso 2:</b> Expresa ambas fracciones con el MCD:<br>
-                    <span class="ejemplo-math-exp">3/(x - 1) = 3(x + 2)/[(x - 1)(x + 2)]</span><br>
-                    <span class="ejemplo-math-exp">2/(x + 2) = 2(x - 1)/[(x - 1)(x + 2)]</span>
-                </div>
-                <div class="ejemplo-math-step"><b>Paso 3:</b> Resta los numeradores:<br>
-                    <span class="ejemplo-math-exp">[3(x + 2) - 2(x - 1)]/[(x - 1)(x + 2)] = [3x + 6 - 2x + 2]/[(x - 1)(x + 2)] = (x + 8)/[(x - 1)(x + 2)]</span>
-                </div>
-            </div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Algebraic_fraction_addition.svg/400px-Algebraic_fraction_addition.svg.png" alt="Suma y resta de fracciones algebraicas" style="max-width:340px;display:block;margin:18px auto 0 auto;border-radius:10px;">
-        </section>
-
-        <!-- Multiplicación y división -->
-        <section class="math-section fade-in">
-            <h2>Multiplicación y división de fracciones algebraicas</h2>
-            <p>
-                <b>Multiplicación:</b> Multiplica numeradores entre sí y denominadores entre sí. Simplifica si es posible.<br>
-                <b>División:</b> Multiplica la primera fracción por el inverso de la segunda.
-            </p>
-            <div class="ejemplo-math">
-                <div class="ejemplo-math-title">Ejemplo: Multiplicación</div>
-                <div class="ejemplo-math-step"><b>Paso 1:</b> Multiplica numeradores y denominadores:<br>
-                    <span class="ejemplo-math-exp">(x/2) × (3/x²) = (x × 3)/(2 × x²) = 3x/2x²</span>
-                </div>
-                <div class="ejemplo-math-step"><b>Paso 2:</b> Simplifica dividiendo por el factor común x:<br>
-                    <span class="ejemplo-math-exp">3x/2x² = 3/(2x)</span>
-                </div>
-            </div>
-            <div class="ejemplo-math">
-                <div class="ejemplo-math-title">Ejemplo: División</div>
-                <div class="ejemplo-math-step"><b>Paso 1:</b> Escribe la división como multiplicación por el inverso:<br>
-                    <span class="ejemplo-math-exp">(x + 1)/(x - 2) ÷ (x/3) = (x + 1)/(x - 2) × (3/x)</span>
-                </div>
-                <div class="ejemplo-math-step"><b>Paso 2:</b> Multiplica numeradores y denominadores:<br>
-                    <span class="ejemplo-math-exp">[(x + 1) × 3]/[(x - 2) × x] = 3(x + 1)/[x(x - 2)]</span>
-                </div>
-            </div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Algebraic_fraction_multiplication.svg/400px-Algebraic_fraction_multiplication.svg.png" alt="Multiplicación y división de fracciones algebraicas" style="max-width:340px;display:block;margin:18px auto 0 auto;border-radius:10px;">
-        </section>
-
-        <!-- Fracciones complejas -->
-        <section class="math-section fade-in">
-            <h2>Fracciones algebraicas complejas</h2>
-            <p>
-                Una <b>fracción algebraica compleja</b> es aquella en la que el numerador, el denominador o ambos contienen a su vez fracciones algebraicas.<br>
-                Para simplificarlas, primero se resuelven las fracciones internas y luego se simplifica la fracción principal.
-            </p>
-            <div class="ejemplo-math">
-                <div class="ejemplo-math-title">Ejemplo: <span class="ejemplo-math-exp">\(\frac{\frac{x}{x+1}}{x-2}\)</span></div>
-                <div class="ejemplo-math-step"><b>Paso 1:</b> Escribe la fracción como una división: <span class="ejemplo-math-exp">\(\frac{x}{x+1} \div (x-2)\)</span></div>
-                <div class="ejemplo-math-step"><b>Paso 2:</b> Multiplica por el inverso: <span class="ejemplo-math-exp">\(\frac{x}{x+1} \times \frac{1}{x-2}\)</span></div>
-                <div class="ejemplo-math-step"><b>Paso 3:</b> Multiplica numeradores y denominadores: <span class="ejemplo-math-exp">\(\frac{x}{(x+1)(x-2)}\)</span></div>
-            </div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Partial_fraction_decomposition.svg/400px-Partial_fraction_decomposition.svg.png" alt="Fracciones parciales" style="max-width:340px;display:block;margin:18px auto 0 auto;border-radius:10px;">
-        </section>
-
-        <!-- Descomposición en fracciones parciales -->
-        <section class="math-section fade-in">
-            <h2>Descomposición en fracciones parciales</h2>
-            <p>
-                Es una técnica para expresar una fracción algebraica impropia como suma de fracciones más simples.<br>
-                Muy útil en integración y resolución de ecuaciones.
-            </p>
-            <div class="ejemplo-math">
-                <div class="ejemplo-math-title">Ejemplo: <span class="ejemplo-math-exp">3x/(x^2 - 1)</span></div>
-                <div class="ejemplo-math-step"><b>Paso 1:</b> Factoriza el denominador: x² - 1 = (x - 1)(x + 1)</div>
-                <div class="ejemplo-math-step"><b>Paso 2:</b> Plantea la descomposición:<br>
-                    <span class="ejemplo-math-exp">3x/(x² - 1) = A/(x - 1) + B/(x + 1)</span>
-                </div>
-                <div class="ejemplo-math-step"><b>Paso 3:</b> Multiplica ambos lados por (x² - 1) y resuelve para A y B:<br>
-                    3x = A(x + 1) + B(x - 1)
-                </div>
-                <div class="ejemplo-math-step"><b>Paso 4:</b> Elige valores de x para resolver:<br>
-                    Si x = 1 ⇒ 3(1) = A(2) + B(0) ⇒ A = 3/2<br>
-                    Si x = -1 ⇒ 3(-1) = A(0) + B(-2) ⇒ B = 3/2
-                </div>
-                <div class="ejemplo-math-step"><b>Resultado:</b> <span class="ejemplo-math-exp">3x/(x² - 1) = (3/2)/(x - 1) + (3/2)/(x + 1)</span></div>
-            </div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Partial_fraction_decomposition.svg/400px-Partial_fraction_decomposition.svg.png" alt="Fracciones parciales" style="max-width:340px;display:block;margin:18px auto 0 auto;border-radius:10px;">
-        </section>
-
-        <!-- Aplicaciones de fracciones algebraicas -->
-        <section class="math-section fade-in bg-blue">
-            <h2>Aplicaciones de las fracciones algebraicas</h2>
-            <ul>
-                <li>Resolución de ecuaciones racionales.</li>
-                <li>Modelado de problemas de física y química.</li>
-                <li>Integración de funciones racionales en cálculo.</li>
-                <li>Representación de relaciones entre magnitudes variables.</li>
-                <li>Resolución de problemas de proporcionalidad y mezclas.</li>
-            </ul>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Algebraic_fraction_application.svg/400px-Algebraic_fraction_application.svg.png" alt="Aplicaciones de fracciones algebraicas" style="max-width:340px;display:block;margin:18px auto 0 auto;border-radius:10px;">
-        </section>
-
-        <!-- Consejos y advertencias -->
-        <section class="math-section fade-in bg-blue">
-            <h2>Consejos y advertencias</h2>
-            <ul>
-                <li>El denominador nunca puede ser cero. Antes de operar, identifica los valores prohibidos.</li>
-                <li>Siempre factoriza antes de simplificar, así podrás cancelar factores comunes.</li>
-                <li>Después de operar, revisa si puedes simplificar el resultado.</li>
-                <li>En suma y resta, pon atención al mínimo común denominador.</li>
-                <li>En multiplicación y división, simplifica antes y después de operar para evitar errores.</li>
-                <li>En fracciones parciales, revisa que la suma de las fracciones parciales sea igual a la original.</li>
-                <li>Practica con ejercicios variados para dominar el tema.</li>
-            </ul>
-        </section>
-
-        <!-- Videos explicativos -->
-        <section class="math-section fade-in">
-            <h2>Videos recomendados</h2>
-            <div class="math-videos">
-                <div class="math-video">
-                    <div class="video-responsive">
-                        <iframe src="https://www.youtube.com/embed/AZd4sJFhyt8" title="Fracciones algebraicas 1" frameborder="0" allowfullscreen></iframe>
+    <main class="math-page">
+        <section class="course-hero reveal-on-scroll">
+            <span class="hero-orb hero-orb-a" aria-hidden="true"></span>
+            <span class="hero-orb hero-orb-b" aria-hidden="true"></span>
+            <div class="hero-glow" aria-hidden="true"></div>
+            <div class="hero-layout">
+                <div class="hero-copy">
+                    <span class="hero-badge">Ruta por grados</span>
+                    <h1>Matemáticas integradas 10° · 11°</h1>
+                    <p>Activa los núcleos de álgebra, funciones y modelación que exige el currículo colombiano. Cada grado cuenta con secuencias, recursos y métricas específicas para llegar fuerte a las pruebas Saber 11.</p>
+                    <ul class="hero-highlights">
+                        <li>Grado 10° · consolidación algebraica y funciones racionales</li>
+                        <li>Grado 11° · profundización trigonométrica y cálculo inicial</li>
+                        <li>Dashboard, plantillas descargables y retroacción guiada</li>
+                    </ul>
+                    <div class="hero-actions">
+                        <button id="start-module-btn" class="primary-action grade-trigger" data-grade="10" data-scroll-target="#ruta-aprendizaje" type="button">Ruta grado 10°</button>
+                        <button id="start-grade11-btn" class="ghost-action grade-trigger" data-grade="11" data-scroll-target="#ruta-aprendizaje" type="button">Ruta grado 11°</button>
+                        <button id="view-syllabus-btn" class="outline-action" type="button">Ver panorama completo</button>
                     </div>
-                    <div class="math-video-title">Fracciones algebraicas 1: Introducción y conceptos básicos</div>
-                    <div class="math-video-recommendation">
-                        <span>✔️ Mira este video para comprender los conceptos fundamentales antes de avanzar.</span>
+                    <p class="hero-milestone" id="math-hero-milestone">Selecciona un grado para ver tu próximo hito.</p>
+                </div>
+                <aside class="hero-preview" aria-label="Vista rápida de progreso">
+                    <div class="hero-preview-header">
+                        <span class="hero-preview-tag">Tu panel automático</span>
+                        <p>Visualiza avances, tiempo invertido y recordatorios por grado.</p>
+                    </div>
+                    <div class="hero-kpi-grid">
+                        <article class="hero-kpi">
+                            <span class="hero-kpi-label">Progreso grado activo</span>
+                            <strong class="hero-kpi-value" id="math-progress-hero">0%</strong>
+                            <span class="hero-kpi-meta">Se actualiza con tus sesiones</span>
+                        </article>
+                        <article class="hero-kpi">
+                            <span class="hero-kpi-label">Minutos acumulados</span>
+                            <strong class="hero-kpi-value" id="math-minutes-hero">0 min</strong>
+                            <span class="hero-kpi-meta">Meta semanal: 210 min</span>
+                        </article>
+                        <article class="hero-kpi">
+                            <span class="hero-kpi-label">Trayecto destacado</span>
+                            <strong class="hero-kpi-value" id="hero-track-label">Elige grado</strong>
+                            <span class="hero-kpi-meta">10° Consolidación · 11° Profundización</span>
+                        </article>
+                    </div>
+                    <ul class="hero-mini-list">
+                        <li><a href="#grade-panorama">Explorar rutas por grado</a></li>
+                        <li><a href="#tematicas">Temáticas interactivas</a></li>
+                        <li><a href="#experiencias">Laboratorios y retos</a></li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <section class="grade-panorama reveal-on-scroll" id="grade-panorama" aria-labelledby="grade-panorama-title">
+            <header class="section-header">
+                <span class="section-tag">Mapas curriculares</span>
+                <h2 id="grade-panorama-title">Elige la ruta alineada con tu grado</h2>
+                <p>Las dos trayectorias comparten el mismo lenguaje visual y tablero de métricas, pero cada una enfatiza los resultados esperados en 10° y 11° según los lineamientos del MEN.</p>
+            </header>
+            <div class="grade-card-grid">
+                <article class="grade-card" data-grade="10">
+                    <header>
+                        <span class="grade-chip">Grado 10°</span>
+                        <h3>Consolidación algebraica y funciones</h3>
+                    </header>
+                    <p>Refuerza aritmética estructural, expresión algebraica y análisis de funciones racionales para dominar fracciones algebraicas y modelos básicos.</p>
+                    <ul>
+                        <li>Operaciones con fracciones algebraicas y restricciones</li>
+                        <li>Funciones polinómicas, racionales y proporcionalidad</li>
+                        <li>Modelación contextual y pensamiento variacional</li>
+                    </ul>
+                    <button class="grade-card-cta grade-trigger" data-grade="10" data-scroll-target="#ruta-aprendizaje" type="button">Activar ruta 10°</button>
+                </article>
+                <article class="grade-card" data-grade="11">
+                    <header>
+                        <span class="grade-chip">Grado 11°</span>
+                        <h3>Profundización trigonométrica y cálculo inicial</h3>
+                    </header>
+                    <p>Integra identidades trigonométricas, límites, derivadas y probabilidad para argumentar con rigor y enfrentar simulacros Saber 11.</p>
+                    <ul>
+                        <li>Trigonometría en el círculo unitario y fenómenos periódicos</li>
+                        <li>Límites, derivadas y aplicaciones en optimización</li>
+                        <li>Probabilidad avanzada y análisis de datos</li>
+                    </ul>
+                    <button class="grade-card-cta grade-trigger" data-grade="11" data-scroll-target="#ruta-aprendizaje" type="button">Activar ruta 11°</button>
+                </article>
+            </div>
+        </section>
+
+        <section class="program-overview reveal-on-scroll" aria-labelledby="panorama-general">
+            <header class="section-header" id="panorama-general">
+                <span class="section-tag">Resumen visual</span>
+                <h2>Ubica rápido cada bloque de la ruta</h2>
+                <p>Revisa las piezas clave antes de sumergirte en los módulos y distribuye tu tiempo con claridad.</p>
+            </header>
+            <div class="overview-grid">
+                <article class="overview-card reveal-on-scroll">
+                    <h3>Ruta grado 10°</h3>
+                    <p>Consolida álgebra y pensamiento variacional con retos contextualizados y guías imprimibles.</p>
+                    <ul class="overview-list">
+                        <li>Secuencia diagnóstica · funciones · modelación básica</li>
+                        <li>Actividades con GeoGebra y storytelling de datos</li>
+                        <li>Plantillas de seguimiento listas para descargar</li>
+                    </ul>
+                    <a class="overview-link" href="#ruta-aprendizaje">Explorar ruta 10° →</a>
+                </article>
+                <article class="overview-card reveal-on-scroll">
+                    <h3>Seguimiento inteligente</h3>
+                    <p>Visualiza el avance, el tiempo invertido y las próximas actividades sin salir de la ruta.</p>
+                    <ul class="overview-list">
+                        <li>Tablero de progreso global y semanal</li>
+                        <li>Alertas de hitos listos para iniciar</li>
+                        <li>Checklist imprimible por módulo</li>
+                    </ul>
+                    <a class="overview-link" href="#dashboard-seguimiento">Abrir panel de seguimiento →</a>
+                </article>
+                <article class="overview-card reveal-on-scroll">
+                    <h3>Ruta grado 11°</h3>
+                    <p>Profundiza en trigonometría, cálculo y probabilidad con simulaciones tipo Saber 11.</p>
+                    <ul class="overview-list">
+                        <li>Identidades trigonométricas y fenómenos periódicos</li>
+                        <li>Límites, derivadas y optimización contextual</li>
+                        <li>Probabilidad, estadística y modelos bivariados</li>
+                    </ul>
+                    <a class="overview-link" href="#ruta-aprendizaje">Explorar ruta 11° →</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="grade-sprints" aria-labelledby="plan-semanal">
+            <header class="section-header reveal-on-scroll" id="plan-semanal">
+                <span class="section-tag">Plan intensivo</span>
+                <h2>Secuencias de aprendizaje por grado</h2>
+                <p>Activa la trayectoria sugerida de ocho semanas por grado. Cada bloque articula teoría, práctica guiada y un reto aplicado con evidencias descargables.</p>
+            </header>
+            <div class="grade-sprint-collection">
+                <div class="grade-sprint-group" data-grade-block="10">
+                    <div class="grade-sprint-heading">
+                        <span class="grade-chip">Grado 10°</span>
+                        <h3>Consolidación algebraica</h3>
+                    </div>
+                    <div class="week-grid">
+                        <article class="week-card reveal-on-scroll" id="g10-fase1">
+                            <span class="week-number">Fase 1</span>
+                            <h3>Diagnóstico y lenguaje algebraico</h3>
+                            <p>Refresca operaciones, leyes algebraicas y representación simbólica para identificar brechas.</p>
+                            <ul>
+                                <li>Sesión guiada de nomenclatura y notación</li>
+                                <li>Laboratorio de fracciones algebraicas</li>
+                                <li>Checklist de errores frecuentes</li>
+                            </ul>
+                            <a class="week-link" href="#ruta-aprendizaje">Revisar secuencia 10° →</a>
+                        </article>
+                        <article class="week-card reveal-on-scroll" id="g10-fase2">
+                            <span class="week-number">Fase 2</span>
+                            <h3>Funciones y representación múltiple</h3>
+                            <p>Conecta tablas, gráficas y expresiones para modelos lineales, cuadráticos y racionales.</p>
+                            <ul>
+                                <li>Taller de storytelling de datos</li>
+                                <li>GeoGebra: comparador de funciones</li>
+                                <li>Retos con situaciones del contexto colombiano</li>
+                            </ul>
+                            <a class="week-link" href="#tematicas">Ir a temáticas 10° →</a>
+                        </article>
+                        <article class="week-card reveal-on-scroll" id="g10-fase3">
+                            <span class="week-number">Fase 3</span>
+                            <h3>Modelación y proyectos de aula</h3>
+                            <p>Integra fracciones algebraicas en proyectos con datos reales y produce conclusiones narradas.</p>
+                            <ul>
+                                <li>Mini proyecto de narrativas con Datawrapper</li>
+                                <li>Reto colaborativo con rúbrica autoguiada</li>
+                                <li>Simulador de seguimiento semanal</li>
+                            </ul>
+                            <a class="week-link" href="#experiencias">Abrir labs 10° →</a>
+                        </article>
                     </div>
                 </div>
-                <div class="math-video">
-                    <div class="video-responsive">
-                        <iframe src="https://www.youtube.com/embed/K76HBtPTNmo" title="Fracciones algebraicas 2" frameborder="0" allowfullscreen></iframe>
+                <div class="grade-sprint-group" data-grade-block="11">
+                    <div class="grade-sprint-heading">
+                        <span class="grade-chip">Grado 11°</span>
+                        <h3>Profundización y Saber 11</h3>
                     </div>
-                    <div class="math-video-title">Fracciones algebraicas 2: Operaciones y ejemplos</div>
-                    <div class="math-video-recommendation">
-                        <span>✔️ Aquí verás ejemplos prácticos de operaciones. Ideal para reforzar lo aprendido.</span>
-                    </div>
-                </div>
-                <div class="math-video">
-                    <div class="video-responsive">
-                        <iframe src="https://www.youtube.com/embed/Wn15ZaJiUq4" title="Fracciones algebraicas 3" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="math-video-title">Fracciones algebraicas 3: Ejercicios resueltos</div>
-                    <div class="math-video-recommendation">
-                        <span>✔️ Repasa con ejercicios resueltos y pon a prueba tus conocimientos.</span>
+                    <div class="week-grid">
+                        <article class="week-card reveal-on-scroll" id="g11-fase1">
+                            <span class="week-number">Fase 1</span>
+                            <h3>Trigonometría y fenómenos periódicos</h3>
+                            <p>Domina identidades, transformaciones y aplicaciones en contextos físicos y estadísticos.</p>
+                            <ul>
+                                <li>Laboratorio de círculo unitario dinamizado</li>
+                                <li>Modelación de ondas y movimiento armónico</li>
+                                <li>Plantilla de resolución paso a paso</li>
+                            </ul>
+                            <a class="week-link" href="#tematicas">Ir a temáticas 11° →</a>
+                        </article>
+                        <article class="week-card reveal-on-scroll" id="g11-fase2">
+                            <span class="week-number">Fase 2</span>
+                            <h3>Cálculo diferencial introductorio</h3>
+                            <p>Explora límites, derivadas y optimización con simulaciones y casos de crecimiento real.</p>
+                            <ul>
+                                <li>Simulación de pendientes instantáneas</li>
+                                <li>Desafíos de optimización contextualizados</li>
+                                <li>Tablero de seguimiento con GeoGebra</li>
+                            </ul>
+                            <a class="week-link" href="#grade11-calculo">Ver detalle cálculo →</a>
+                        </article>
+                        <article class="week-card reveal-on-scroll" id="g11-fase3">
+                            <span class="week-number">Fase 3</span>
+                            <h3>Probabilidad, estadística y simulacros</h3>
+                            <p>Aplica distribuciones, conteo y análisis de datos para dominar los ítems tipo Saber 11.</p>
+                            <ul>
+                                <li>Simulacro cronometrado con retroacción</li>
+                                <li>Laboratorio de hipótesis con datos abiertos</li>
+                                <li>Peer review y checklist Saber 11</li>
+                            </ul>
+                            <a class="week-link" href="#experiencias">Abrir labs 11° →</a>
+                        </article>
                     </div>
                 </div>
             </div>
         </section>
-    </div>
+
+    <section class="dashboard" id="dashboard-seguimiento">
+            <div class="learner-columns">
+                <article class="course-summary reveal-on-scroll">
+                    <span class="course-badge" id="grade-active-badge">Grado 10°</span>
+                    <h3 id="course-summary-title">Consolidación algebraica y funciones</h3>
+                    <p id="course-summary-copy">Refuerza operaciones con fracciones algebraicas, analiza funciones y comunica hallazgos con tableros de datos. Cambia de grado para ver el itinerario personalizado.</p>
+                    <div class="course-meta" id="course-tags">
+                        <span class="meta-tag">Álgebra</span>
+                        <span class="meta-tag">Funciones</span>
+                        <span class="meta-tag">Modelación</span>
+                    </div>
+                </article>
+                <aside class="course-progress-card reveal-on-scroll">
+                    <h4>Tu avance global</h4>
+                    <div class="progress-donut" id="math-progress-donut" style="--progress:0;">
+                        <span id="math-progress-percent">0%</span>
+                    </div>
+                    <p class="progress-meta" id="math-progress-badge">0 lecciones completadas</p>
+                    <p class="progress-time" id="math-total-minutes">0 min de práctica</p>
+                    <div class="progress-milestones">
+                        <span id="math-next-milestone">Próximo hito: comienza la Semana 1.</span>
+                    </div>
+                </aside>
+            </div>
+
+            <section id="ruta-aprendizaje" class="module-section reveal-on-scroll">
+                <header class="module-header-block">
+                    <div class="module-header-copy">
+                        <h3>Ruta de aprendizaje</h3>
+                        <p>Selecciona un grado para ver los módulos sugeridos, retos aplicados y recursos descargables.</p>
+                    </div>
+                    <div class="grade-switcher" role="tablist">
+                        <button class="grade-toggle is-active" data-grade="10" aria-selected="true" type="button">Grado 10°</button>
+                        <button class="grade-toggle" data-grade="11" aria-selected="false" type="button">Grado 11°</button>
+                    </div>
+                </header>
+                <div class="module-list" id="module-list"></div>
+            </section>
+
+            <section class="course-insights reveal-on-scroll">
+                <article class="insights-card">
+                    <header>
+                        <h3>Práctica semanal</h3>
+                        <span class="insights-badge">Últimos 7 días</span>
+                    </header>
+                    <div class="chart-frame">
+                        <canvas id="mathProgressChart"></canvas>
+                        <div id="math-progress-placeholder" class="chart-placeholder" hidden>Aún no registras tiempo de práctica.</div>
+                    </div>
+                </article>
+                <aside class="resources-card">
+                    <h3>Recursos recomendados</h3>
+                    <ul id="resource-list">
+                        <li><a href="https://www.khanacademy.org/math" target="_blank" rel="noopener">Khan Academy · Álgebra intermedia</a></li>
+                        <li><a href="https://www.geogebra.org/calculator" target="_blank" rel="noopener">GeoGebra · Calculadora gráfica</a></li>
+                        <li><a href="https://es.symbolab.com/solver/algebra" target="_blank" rel="noopener">Symbolab · Asistente algebraico</a></li>
+                    </ul>
+                    <button id="export-plan-btn" class="logout-btn-standalone" type="button">Exportar plan semanal</button>
+                </aside>
+            </section>
+
+            <section class="videos-section reveal-on-scroll">
+                <header>
+                    <h3>Videos recomendados</h3>
+                    <p>Mantén los fundamentos frescos con estas cápsulas guiadas.</p>
+                </header>
+                <div class="video-grid">
+                    <article class="video-card">
+                        <div class="video-responsive">
+                            <iframe src="https://www.youtube.com/embed/AZd4sJFhyt8" title="Fracciones algebraicas 1" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <h4>Introducción y conceptos clave</h4>
+                        <p>Ideal para repasar antes de iniciar la Semana 1.</p>
+                    </article>
+                    <article class="video-card">
+                        <div class="video-responsive">
+                            <iframe src="https://www.youtube.com/embed/K76HBtPTNmo" title="Fracciones algebraicas 2" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <h4>Operaciones con fracciones algebraicas</h4>
+                        <p>Refuerza estrategias para los retos aplicados del módulo.</p>
+                    </article>
+                    <article class="video-card">
+                        <div class="video-responsive">
+                            <iframe src="https://www.youtube.com/embed/Wn15ZaJiUq4" title="Fracciones algebraicas 3" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <h4>Ejercicios resueltos paso a paso</h4>
+                        <p>Úsalo como repaso guiado antes de resolver los retos aplicados.</p>
+                    </article>
+                </div>
+            </section>
+        </section>
+
+        <section class="topic-hub" id="tematicas">
+            <header class="section-header reveal-on-scroll">
+                <span class="section-tag">Teoría guiada</span>
+                <h2>Temáticas con experiencias interactivas y visuales</h2>
+                <p>Sumérgete en cada tema con simulaciones, retos arrastrables y cuestionarios guiados. Cada grado mantiene su propio mapa de aprendizaje.</p>
+            </header>
+            <div class="topic-groups">
+                <div class="grade-topic-group" data-grade-block="10">
+                    <div class="grade-topic-heading">
+                        <span class="grade-chip">Grado 10°</span>
+                        <h3>Competencias de consolidación</h3>
+                    </div>
+                    <div class="topic-grid">
+                        <article class="topic-card reveal-on-scroll theme-fundamentos">
+                            <div class="topic-card-body">
+                                <span class="topic-chip">Fundamentos</span>
+                                <h3>Fracciones algebraicas esenciales</h3>
+                                <p>Comprende la estructura de una fracción algebraica con visualizaciones y ejemplos comentados paso a paso.</p>
+                                <ul class="topic-highlights">
+                                    <li>Mapa interactivo de numerador y denominador</li>
+                                    <li>Casos de uso en modelación real</li>
+                                    <li>Quiz guiado con retroalimentación</li>
+                                </ul>
+                            </div>
+                            <div class="topic-actions">
+                                <a class="topic-link" href="math-fundamentos.html">Abrir módulo →</a>
+                            </div>
+                        </article>
+                        <article class="topic-card reveal-on-scroll theme-tipos">
+                            <div class="topic-card-body">
+                                <span class="topic-chip">Clasificación</span>
+                                <h3>Tipos de fracciones</h3>
+                                <p>Explora cuándo una fracción es propia, impropia, aparente o compleja con animaciones comparativas.</p>
+                                <ul class="topic-highlights">
+                                    <li>Galería de representaciones</li>
+                                    <li>Comparador interactivo</li>
+                                    <li>Actividad de arrastrar y clasificar</li>
+                                </ul>
+                            </div>
+                            <div class="topic-actions">
+                                <a class="topic-link" href="math-tipos.html">Abrir módulo →</a>
+                            </div>
+                        </article>
+                        <article class="topic-card reveal-on-scroll theme-dominio">
+                            <div class="topic-card-body">
+                                <span class="topic-chip">Dominio</span>
+                                <h3>Valores permitidos</h3>
+                                <p>Aprende a detectar restricciones, discontinuidades y asíntotas con un tablero interactivo.</p>
+                                <ul class="topic-highlights">
+                                    <li>Escenarios con números reales y complejos</li>
+                                    <li>Simulador de valores prohibidos</li>
+                                    <li>Retos de drag & drop</li>
+                                </ul>
+                            </div>
+                            <div class="topic-actions">
+                                <a class="topic-link" href="math-dominio.html">Abrir módulo →</a>
+                            </div>
+                        </article>
+                        <article class="topic-card reveal-on-scroll theme-simplificacion">
+                            <div class="topic-card-body">
+                                <span class="topic-chip">Procedimientos</span>
+                                <h3>Simplificación estratégica</h3>
+                                <p>Perfecciona la factorización y cancelación responsable con diagramas que señalan restricciones.</p>
+                                <ul class="topic-highlights">
+                                    <li>Checklists descargables</li>
+                                    <li>Animaciones paso a paso</li>
+                                    <li>Taller interactivo de errores comunes</li>
+                                </ul>
+                            </div>
+                            <div class="topic-actions">
+                                <a class="topic-link" href="math-simplificacion.html">Abrir módulo →</a>
+                            </div>
+                        </article>
+                        <article class="topic-card reveal-on-scroll theme-suma">
+                            <div class="topic-card-body">
+                                <span class="topic-chip">Operaciones</span>
+                                <h3>Suma y resta con estilo</h3>
+                                <p>Domina el mínimo común denominador y el manejo de signos con guías visuales.</p>
+                                <ul class="topic-highlights">
+                                    <li>Casos guiados con animaciones</li>
+                                    <li>Retos ordena y completa</li>
+                                    <li>Practica con historias de datos</li>
+                                </ul>
+                            </div>
+                            <div class="topic-actions">
+                                <a class="topic-link" href="math-suma-resta.html">Abrir módulo →</a>
+                            </div>
+                        </article>
+                        <article class="topic-card reveal-on-scroll theme-multiplicacion">
+                            <div class="topic-card-body">
+                                <span class="topic-chip">Operaciones</span>
+                                <h3>Multiplicación y división</h3>
+                                <p>Optimiza el cálculo y la simplificación previa/posterior con escenarios aplicados.</p>
+                                <ul class="topic-highlights">
+                                    <li>Laboratorio de cancelación inteligente</li>
+                                    <li>Simulador de tasas compuestas</li>
+                                    <li>Reto interactivo paso a paso</li>
+                                </ul>
+                            </div>
+                            <div class="topic-actions">
+                                <a class="topic-link" href="math-multiplicacion.html">Abrir módulo →</a>
+                            </div>
+                        </article>
+                        <article class="topic-card reveal-on-scroll theme-complejas">
+                            <div class="topic-card-body">
+                                <span class="topic-chip">Profundiza</span>
+                                <h3>Fracciones complejas</h3>
+                                <p>Convierte expresiones anidadas en modelos limpios con herramientas interactivas.</p>
+                                <ul class="topic-highlights">
+                                    <li>Visualizador de transformaciones</li>
+                                    <li>Actividad drag & drop paso a paso</li>
+                                    <li>Desafíos progresivos</li>
+                                </ul>
+                            </div>
+                            <div class="topic-actions">
+                                <a class="topic-link" href="math-fracciones-complejas.html">Abrir módulo →</a>
+                            </div>
+                        </article>
+                        <article class="topic-card reveal-on-scroll theme-parciales">
+                            <div class="topic-card-body">
+                                <span class="topic-chip">Técnica avanzada</span>
+                                <h3>Fracciones parciales</h3>
+                                <p>Descompón expresiones impropias y asocia coeficientes con un asistente interactivo.</p>
+                                <ul class="topic-highlights">
+                                    <li>Plantillas de resolución guiada</li>
+                                    <li>Calculadora simbólica integrada</li>
+                                    <li>Quiz con pistas adaptativas</li>
+                                </ul>
+                            </div>
+                            <div class="topic-actions">
+                                <a class="topic-link" href="math-parciales.html">Abrir módulo →</a>
+                            </div>
+                        </article>
+                        <article class="topic-card reveal-on-scroll theme-aplicaciones">
+                            <div class="topic-card-body">
+                                <span class="topic-chip">Aplicaciones</span>
+                                <h3>Modelos y escenarios reales</h3>
+                                <p>Relaciona las fracciones algebraicas con química, economía y narrativa de datos.</p>
+                                <ul class="topic-highlights">
+                                    <li>Casos reales gamificados</li>
+                                    <li>Plantillas para storytelling cuantitativo</li>
+                                    <li>Tableros visuales personalizables</li>
+                                </ul>
+                            </div>
+                            <div class="topic-actions">
+                                <a class="topic-link" href="math-aplicaciones.html">Abrir módulo →</a>
+                            </div>
+                        </article>
+                        <article class="topic-card reveal-on-scroll theme-consejos">
+                            <div class="topic-card-body">
+                                <span class="topic-chip">Metacognición</span>
+                                <h3>Consejos y tácticas de estudio</h3>
+                                <p>Fortalece tus hábitos con rutinas, checklists y ejercicios de reflexión guiada.</p>
+                                <ul class="topic-highlights">
+                                    <li>Planner imprimible de 3 semanas</li>
+                                    <li>Checklist anti-errores frecuentes</li>
+                                    <li>Toolkit de autoanálisis</li>
+                                </ul>
+                            </div>
+                            <div class="topic-actions">
+                                <a class="topic-link" href="math-consejos.html">Abrir módulo →</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="grade-topic-group" data-grade-block="11">
+                    <div class="grade-topic-heading">
+                        <span class="grade-chip">Grado 11°</span>
+                        <h3>Competencias de profundización</h3>
+                    </div>
+                    <div class="topic-grid">
+                        <article class="topic-card reveal-on-scroll theme-trigonometria">
+                            <div class="topic-card-body">
+                                <span class="topic-chip">Trigonometría</span>
+                                <h3>Identidades y círculo unitario</h3>
+                                <p>Explora identidades, transformaciones y aplicaciones en fenómenos periódicos con simulaciones dinámicas.</p>
+                                <ul class="topic-highlights">
+                                    <li>Laboratorio interactivo del círculo unitario</li>
+                                    <li>Casos de ondas, sonido y electromagnetismo</li>
+                                    <li>Retos tipo Saber 11 de fenómenos periódicos</li>
+                                </ul>
+                            </div>
+                            <div class="topic-actions">
+                                <a class="topic-link" href="math-grado11-trigonometria.html">Abrir secuencia →</a>
+                            </div>
+                        </article>
+                        <article class="topic-card reveal-on-scroll theme-calculo">
+                            <div class="topic-card-body">
+                                <span class="topic-chip">Cálculo</span>
+                                <h3>Límites y derivadas aplicadas</h3>
+                                <p>Comprende el cambio instantáneo con visualizaciones, tablas y casos de optimización cotidianos.</p>
+                                <ul class="topic-highlights">
+                                    <li>Explorador de pendientes y tangentes</li>
+                                    <li>Problemas de optimización contextualizados</li>
+                                    <li>Plantilla de reporte para evidencias Saber 11</li>
+                                </ul>
+                            </div>
+                            <div class="topic-actions">
+                                <a class="topic-link" href="math-grado11-calculo.html">Abrir secuencia →</a>
+                            </div>
+                        </article>
+                        <article class="topic-card reveal-on-scroll theme-probabilidad">
+                            <div class="topic-card-body">
+                                <span class="topic-chip">Probabilidad</span>
+                                <h3>Modelos de conteo y datos</h3>
+                                <p>Integra combinatoria, distribuciones y análisis de datos bivariados con tableros interactivos.</p>
+                                <ul class="topic-highlights">
+                                    <li>Simulaciones de eventos y diagramas de árbol</li>
+                                    <li>Dashboard bivariado con datos abiertos</li>
+                                    <li>Banco de preguntas tipo Saber 11</li>
+                                </ul>
+                            </div>
+                            <div class="topic-actions">
+                                <a class="topic-link" href="math-grado11-probabilidad.html">Abrir secuencia →</a>
+                            </div>
+                        </article>
+                        <article class="topic-card reveal-on-scroll theme-modelacion">
+                            <div class="topic-card-body">
+                                <span class="topic-chip">Modelación</span>
+                                <h3>Proyectos y comunicación matemática</h3>
+                                <p>Estructura investigaciones cortas, justifica modelos y comunica resultados con narrativa visual.</p>
+                                <ul class="topic-highlights">
+                                    <li>Guía de proyecto interdisciplinario</li>
+                                    <li>Rúbrica de presentación con checklist</li>
+                                    <li>Plantilla de reflexión y retroacción</li>
+                                </ul>
+                            </div>
+                            <div class="topic-actions">
+                                <a class="topic-link" href="math-consejos.html#saber11">Abrir toolkit →</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="grade-dive reveal-on-scroll" id="grade-dive">
+            <header class="section-header">
+                <span class="section-tag">Secuencias destacadas</span>
+                <h2>Profundiza en los proyectos clave de cada grado</h2>
+                <p>Accede a guías descargables, rúbricas y simulaciones listas para el aula o el autoestudio. Usa estas tarjetas para continuar la ruta según tu grado.</p>
+            </header>
+            <div class="grade-dive-grid">
+                <article class="dive-card" id="grade10-proyecto">
+                    <header>
+                        <span class="grade-chip">Grado 10°</span>
+                        <h3>Proyecto integrador de modelación</h3>
+                    </header>
+                    <p>Construye un informe con datos socioeconómicos locales, aplica fracciones algebraicas y comunica conclusiones con visualizaciones.</p>
+                    <ul>
+                        <li>Plantilla Datawrapper preconfigurada</li>
+                        <li>Rúbrica con criterios de comunicación</li>
+                        <li>Checklist para revisión entre pares</li>
+                    </ul>
+                    <a class="dive-link" href="math-aplicaciones.html">Ir al proyecto →</a>
+                </article>
+                <article class="dive-card" id="grade10-portafolio">
+                    <header>
+                        <span class="grade-chip">Grado 10°</span>
+                        <h3>Portafolio de competencias</h3>
+                    </header>
+                    <p>Recopila evidencias de cada módulo, reflexiona sobre tus avances y prepara el terreno para la profundización de 11°.</p>
+                    <ul>
+                        <li>Formato de reflexión metacognitiva</li>
+                        <li>Resumen visual de indicadores clave</li>
+                        <li>Checklist de preparación para Saber 11</li>
+                    </ul>
+                    <a class="dive-link" href="math-consejos.html">Abrir portafolio →</a>
+                </article>
+                <article class="dive-card" id="grade11-trigonometria">
+                    <header>
+                        <span class="grade-chip">Grado 11°</span>
+                        <h3>Ruta trigonométrica en contexto</h3>
+                    </header>
+                    <p>Analiza fenómenos periódicos, interpreta fases y amplitudes y modela situaciones reales con trigonometría aplicada.</p>
+                    <ul>
+                        <li>Simulador GeoGebra del círculo unitario</li>
+                        <li>Guía de identidades y transformaciones</li>
+                        <li>Problemas tipo Saber 11 resueltos paso a paso</li>
+                    </ul>
+                    <a class="dive-link" href="https://www.geogebra.org/m/nnmueytd" target="_blank" rel="noopener">Abrir simulador →</a>
+                </article>
+                <article class="dive-card" id="grade11-calculo">
+                    <header>
+                        <span class="grade-chip">Grado 11°</span>
+                        <h3>Laboratorio de cálculo diferencial</h3>
+                    </header>
+                    <p>Explora límites, derivadas y aplicaciones con visualizaciones dinámicas y plantillas para documentar resultados.</p>
+                    <ul>
+                        <li>Explorador de límites y pendientes instantáneas</li>
+                        <li>Casos de optimización contextualizada</li>
+                        <li>Plantilla de reporte en Google Slides</li>
+                    </ul>
+                    <a class="dive-link" href="https://www.geogebra.org/m/t9hbkz4w" target="_blank" rel="noopener">Abrir laboratorio interactivo →</a>
+                </article>
+                <article class="dive-card" id="grade11-probabilidad">
+                    <header>
+                        <span class="grade-chip">Grado 11°</span>
+                        <h3>Simulador de probabilidad y datos</h3>
+                    </header>
+                    <p>Modela fenómenos aleatorios, compara distribuciones y presenta hallazgos con dashboards interactivos.</p>
+                    <ul>
+                        <li>Tablero Datawrapper para distribuciones</li>
+                        <li>Banco de situaciones aleatorias contextualizadas</li>
+                        <li>Pauta para justificar estrategias de conteo</li>
+                    </ul>
+                    <a class="dive-link" href="https://www.geogebra.org/m/jfsxsnw3" target="_blank" rel="noopener">Experimentar ahora →</a>
+                </article>
+                <article class="dive-card" id="grade11-modelacion">
+                    <header>
+                        <span class="grade-chip">Grado 11°</span>
+                        <h3>Capstone de modelación interdisciplinaria</h3>
+                    </header>
+                    <p>Integra trigonometría, cálculo y probabilidad en un informe final con recomendaciones accionables para tu comunidad educativa.</p>
+                    <ul>
+                        <li>Guion de presentación para pitch de 10 minutos</li>
+                        <li>Rúbrica Saber 11 adaptada</li>
+                        <li>Checklist de narrativa y visualización</li>
+                    </ul>
+                    <a class="dive-link" href="#experiencias">Conectar con labs →</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="lab-gallery" id="experiencias">
+            <header class="section-header reveal-on-scroll">
+                <span class="section-tag">Labs y retos</span>
+                <h2>Experiencias aplicadas para tu proyecto final</h2>
+                <p>Completa laboratorios, simulaciones y revisiones colaborativas que se enlazan con los hitos de cada semana.</p>
+            </header>
+            <div class="lab-grid">
+                <article class="lab-card reveal-on-scroll" id="laboratorio-fracciones">
+                    <span class="lab-label">Lab interactivo</span>
+                    <h4>Laboratorio de fracciones</h4>
+                    <p>Experimenta con fracciones propias, impropias y complejas para visualizar su comportamiento.</p>
+                    <ul>
+                        <li>Manipula fracciones con sliders y observa las gráficas resultantes.</li>
+                        <li>Identifica patrones al simplificar expresiones.</li>
+                    </ul>
+                </article>
+                <article class="lab-card reveal-on-scroll" id="ecuaciones-lineales">
+                    <span class="lab-label">Refuerzo</span>
+                    <h4>Estrategias con ecuaciones lineales</h4>
+                    <p>Aplica fracciones algebraicas para resolver sistemas y traducirlos a historias reales.</p>
+                    <ul>
+                        <li>Relaciona ecuaciones con gráficos de tendencia.</li>
+                        <li>Conecta resultados con decisiones cuantitativas.</li>
+                    </ul>
+                </article>
+                <article class="lab-card reveal-on-scroll" id="proyecto-datos">
+                    <span class="lab-label">Mini proyecto</span>
+                    <h4>Interpretación de datos</h4>
+                    <p>Construye un relato con porcentajes, fracciones y razones a partir de una base de datos.</p>
+                    <ul>
+                        <li>Selecciona métricas relevantes y visualízalas.</li>
+                        <li>Prepara recomendaciones breves para tu público.</li>
+                    </ul>
+                </article>
+                <article class="lab-card reveal-on-scroll" id="grafica">
+                    <span class="lab-label">Taller</span>
+                    <h4>Storytelling con gráficas</h4>
+                    <p>Construye visualizaciones limpias y argumenta decisiones con evidencia numérica.</p>
+                    <ul>
+                        <li>Selecciona la gráfica ideal para cada tipo de dato.</li>
+                        <li>Aplica principios de narrativa visual.</li>
+                    </ul>
+                </article>
+                <article class="lab-card reveal-on-scroll" id="caso-exponencial">
+                    <span class="lab-label">Caso aplicado</span>
+                    <h4>Crecimiento exponencial</h4>
+                    <p>Modela fenómenos que crecen rápidamente y justifica el modelo elegido.</p>
+                    <ul>
+                        <li>Compara funciones lineales vs. exponenciales.</li>
+                        <li>Evalúa escenarios con sensibilidad y restricciones.</li>
+                    </ul>
+                </article>
+                <article class="lab-card reveal-on-scroll" id="laboratorio-funciones">
+                    <span class="lab-label">Laboratorio</span>
+                    <h4>Construye tu dashboard</h4>
+                    <p>Integra gráficas, conclusiones y recomendaciones en una presentación interactiva.</p>
+                    <ul>
+                        <li>Define métricas clave y cómo se relacionan.</li>
+                        <li>Entrega un reporte visual listo para revisión.</li>
+                    </ul>
+                </article>
+                <article class="lab-card reveal-on-scroll" id="modelacion">
+                    <span class="lab-label">Deep dive</span>
+                    <h4>Modelos matemáticos con datos reales</h4>
+                    <p>Construye modelos a partir de conjuntos de datos abiertos y defiende tu metodología.</p>
+                    <ul>
+                        <li>Selecciona supuestos y justifica parámetros.</li>
+                        <li>Evalúa la precisión del modelo con métricas.</li>
+                    </ul>
+                </article>
+                <article class="lab-card reveal-on-scroll" id="optimiza">
+                    <span class="lab-label">Toolkit</span>
+                    <h4>Optimización y planteamiento</h4>
+                    <p>Resuelve problemas de maximización o minimización usando ecuaciones y desigualdades.</p>
+                    <ul>
+                        <li>Identifica variables de decisión y restricciones.</li>
+                        <li>Resume hallazgos con conclusiones accionables.</li>
+                    </ul>
+                </article>
+                <article class="lab-card reveal-on-scroll" id="simulador">
+                    <span class="lab-label">Simulación</span>
+                    <h4>Simulador de examen</h4>
+                    <p>Mide tu dominio con un examen cronometrado que replica pruebas de ingreso.</p>
+                    <ul>
+                        <li>Recibe retroalimentación inmediata.</li>
+                        <li>Refuerza áreas débiles con ejercicios sugeridos.</li>
+                    </ul>
+                </article>
+                <article class="lab-card reveal-on-scroll" id="peer-review">
+                    <span class="lab-label">Peer review</span>
+                    <h4>Revisión colaborativa</h4>
+                    <p>Comparte tu solución final y recibe comentarios guiados por rúbricas detalladas.</p>
+                    <ul>
+                        <li>Evalúa la claridad de los argumentos de tus compañeros.</li>
+                        <li>Integra feedback en tu capstone final.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+    </main>
+
     <script src="js/script6.js"></script>
 </body>
 </html>
